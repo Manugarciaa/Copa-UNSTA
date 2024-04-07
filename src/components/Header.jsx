@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-import { navLinks } from "../constants";
 import { logo, close, menu } from "../assets"
 
+export const navLinks = [   {     id: "inicio",     title: "Inicio",   },   {     id: "torneo",     title: "Torneo",   },   {     id: "semana-de-la-ingenieria",     title: "Semana de la Ingeniería",   }, ];
 
-const Navbar = () => {
+const Header = () => {
   const [toggle, settoggle] = useState(false)
   return (
-    <nav className='w-full flex py-6 justify-between items-center navbar'>
+    <nav className='w-full flex py-6 justify-between items-center Header'>
       <img src={logo} alt='UNSTA' className='w-[124] h-[32px]'/>
     
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
@@ -53,4 +53,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Header
