@@ -110,7 +110,7 @@
 
 .orange__gradient {
   background: var(--orange-gradient);
-  filter: blur(123px);
+  filter: blur(900px);
 }
 
 .gray__gradient {
