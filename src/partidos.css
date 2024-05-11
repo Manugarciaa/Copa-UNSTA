@@ -1,0 +1,40 @@
+.partidos-page {
+    padding: 20px;
+}
+
+.partido-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 15px;
+}
+
+.equipo-info {
+    display: flex;
+    align-items: center;
+}
+
+.equipo-nombre {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.vs {
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+.fecha-hora {
+    display: flex;
+    align-items: center;
+}
+
+.fecha {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.hora {
+    font-style: italic;
+} 
