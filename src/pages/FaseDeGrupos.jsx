@@ -3,7 +3,7 @@ import LogoEquipoA1 from "../assets/LogoEquipoA1.webp";
 
 const TeamRow = ({ team, index }) => {
   return (
- <tr className={`text-white border-b border-${index % 2 === 0 ? 'gray-200' : 'gray-500'}`}>
+    <tr className={`text-white border-b border-${index % 2 === 0 ? 'gray-200' : 'gray-500'}`}>
       <td className="px-4 py-2 flex items-center">
         {index < 2 ? (
           <div className="flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 mr-2">
@@ -90,12 +90,13 @@ const Tournament = () => {
 
   return (
     <div className="flex flex-col items-center text-white">
-      <h1 className="font-poppins font-semibold text-3xl xl:text-5xl mb-6 mt-10">
-        Fase de grupos
+      <h1 className="flex-1 font-poppins font-semibold text-[32px] text-white leading-[35px] xl:text-[50px] xl:leading-[75px]">
+        <span className="text-gradient">Fase de grupos</span>
       </h1>
       {groups.map((group, index) => (
         <GroupTable key={index} groupName={group.groupName} teams={group.teams} />
       ))}
+      {/* <div className="absolute z-[1] w-[40%] h-[20%] rounded-full orange__gradient bottom-40" /> */}
     </div>
   );
 };

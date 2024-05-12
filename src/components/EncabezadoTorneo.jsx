@@ -21,7 +21,7 @@ const EncabezadoTorneo = () => {
   };
 
   return (
-    <nav className="w-full flex py-5 justify-between items-center navbar" style={{ backgroundColor: "#ff7733"}}>
+    <nav className="w-full flex py-5 justify-between items-center navbar">
       <img src={UNSTA_logo} alt="UNSTA" className="w-[60px] h-[60px]" />
       
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">

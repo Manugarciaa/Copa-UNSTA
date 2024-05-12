@@ -4,6 +4,7 @@ import styles from "./style";
 
 import Header from "./components/Header"
 import Home from "./pages/Home";
+import Footer from "./components/Footer";
 import EncabezadoTorneo from "./components/EncabezadoTorneo";
 import Equipos from "./pages/Equipos"
 import Partidos from "./pages/Partidos"
@@ -17,12 +18,12 @@ const App = () => (
       <div className={`${styles.boxWidth}`}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={ <> <Header /> <Home /> </> } />
-            <Route path="/masculino/equipos" element={ <> <Equipos /> </>} />
+            <Route path="/" element={ <> <Header /> <Home /> <Footer /> </> } />
+            <Route path="/masculino/equipos" element={ <> <EncabezadoTorneo /> <Equipos /> </>} />
             <Route path="/masculino/partidos" element={ <> <EncabezadoTorneo /> <Partidos /> </>} />
-            <Route path="/masculino/fase_de_grupos" element={ <> <FaseDeGrupos /> </>} />
-            <Route path="/masculino/cuadro_de_eliminatorias" element={ <> <CuadroDeEliminatorias /> </>} />
-            <Route path="/masculino/estadisticas" element={ <> <Estadisticas /> </>} />
+            <Route path="/masculino/fase_de_grupos" element={ <> <EncabezadoTorneo /> <FaseDeGrupos /> </>} />
+            <Route path="/masculino/cuadro_de_eliminatorias" element={ <> <EncabezadoTorneo /> <CuadroDeEliminatorias /> </>} />
+            <Route path="/masculino/estadisticas" element={ <> <EncabezadoTorneo /> <Estadisticas /> </>} />
           </Routes>
         </BrowserRouter>
       </div>
