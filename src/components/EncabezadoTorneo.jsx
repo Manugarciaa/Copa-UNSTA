@@ -1,40 +1,37 @@
-import React from "react";
+import { useState } from "react";
+import UNSTA_logo from "../assets/UNSTA.png";
+import { close, menu } from "../assets";
+import { Link } from "react-router-dom"
 
 export const navLinks = [
-  { id: "inicio", title: "Inicio", to: "/inicio" },
+  { id: "equipos", title: "Equipos", to: "/masculino/equipos" },
   { id: "partidos", title: "Partidos", to: "/masculino/partidos" },
   { id: "fase_de_grupos", title: "Fase de grupos", to: "/masculino/fase_de_grupos" },
   { id: "cuadro_de_eliminatorias", title: "Cuadro de eliminatorias", to: "/masculino/cuadro_de_eliminatorias" },
   { id: "estadisticas", title: "Estadísticas", to: "/masculino/estadisticas" },
 ];
 
-export default function Navbar() {
+const EncabezadoTorneo = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
-
+  
   const handleNavClick = (title) => {
     setActive(title);
-    setToggle(false); 
+    setToggle(false); // Cerrar el menú desplegable después de hacer clic
   };
 
   return (
-    <nav
-      className="w-full flex py-5 justify-between items-center navbar"
-      style={{ backgroundColor: "#ff7733" }}
-    >
+    <nav className="w-full flex py-5 justify-between items-center navbar" style={{ backgroundColor: "#ff7733"}}>
       <img src={UNSTA_logo} alt="UNSTA" className="w-[60px] h-[60px]" />
-
+      
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`font-poppins font-normal cursor-pointer text-[16px] ${
-              active === nav.title ? "text-white" : "text-dimWhite"
-            } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
+            className={`font-poppins font-normal cursor-pointer text-[16px] ${active === nav.title ? "text-white" : "text-dimWhite"
+              } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
           >
-            <Link to={nav.to} onClick={() => handleNavClick(nav.title)}>
-              {nav.title}
-            </Link>
+            <Link to={nav.to} onClick={() => handleNavClick(nav.title)}>{nav.title}</Link>
           </li>
         ))}
       </ul>
@@ -48,21 +45,17 @@ export default function Navbar() {
         />
 
         <div
-          className={`${
-            !toggle ? "hidden" : "flex"
-          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+          className={`${!toggle ? "hidden" : "flex"
+            } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
         >
           <ul className="list-none flex justify-end items-start flex-1 flex-col">
             {navLinks.map((nav, index) => (
               <li
                 key={nav.id}
-                className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                  active === nav.title ? "text-white" : "text-dimWhite"
-                } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
+                className={`font-poppins font-medium cursor-pointer text-[16px] ${active === nav.title ? "text-white" : "text-dimWhite"
+                  } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
               >
-                <Link to={nav.to} onClick={() => handleNavClick(nav.title)}>
-                  {nav.title}
-                </Link>
+                <Link to={nav.to} onClick={() => handleNavClick(nav.title)}>{nav.title}</Link>
               </li>
             ))}
           </ul>
@@ -70,4 +63,6 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
+};
+
+export default EncabezadoTorneo;

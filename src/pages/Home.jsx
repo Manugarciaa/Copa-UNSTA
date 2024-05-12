@@ -25,12 +25,7 @@ const Home = () => (
           alt="Home image"
           className="w-[70%] h-[90%] relative z-[5]"
         />
-
-        {/* gradient start */}
-        <div className="absolute z-[0] w-[40%] h-[35%] top-0  white__gradient" />
-        <div className="absolute z-[1] w-[70%] h-[80%] rounded-full orange__gradient bottom-40" />
-        <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 gray__gradient" />
-        {/* gradient end */}
+        <div className="absolute z-[1] w-[60%] h-[50%] rounded-full orange__gradient bottom-40" />
       </div>
     </section>
 
