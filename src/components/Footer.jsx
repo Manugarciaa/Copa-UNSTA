@@ -1,16 +1,9 @@
-import React from 'react';
-import { Container, Row } from 'react-bootstrap';
-
-const Footer = ({ text }) => {
+const Footer = () => {
   return (
-    <footer>
-      <Container>
-        <Row className='bg-primary text-white'>
-          Footer seccion
-        </Row>
-      </Container>
-    </footer>
-  );
-};
+    <div>
+      Footer
+    </div>
+  )
+}
 
 export default Footer;

@@ -1,4 +1,3 @@
-import React from 'react';
 import Partido from '../components/Partido';
 import '../partidos.css'; // Import the CSS file
 

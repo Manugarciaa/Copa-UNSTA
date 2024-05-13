@@ -1,4 +1,3 @@
-import React from 'react';
 import LogoEquipoA1 from "../assets/LogoEquipoA1.webp";
 
 const TeamRow = ({ team, index }) => {

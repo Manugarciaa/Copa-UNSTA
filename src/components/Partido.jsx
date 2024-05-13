@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Partido = ({ equipoA, equipoB, fecha, hora }) => {
     return (
         <div className="partido-item">
