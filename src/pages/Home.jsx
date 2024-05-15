@@ -11,9 +11,8 @@ const Home = () => (
             Bienvenidos al evento más emocionante de <span className="text-gradient">Ingeniería</span>
           </h1>
         </div>
-        <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          ¡No te pierdas las charlas y el torneo de futbol de la Semana de la Ingeniería!
-          Mantente informado y participa en esta emocionante semana llena de aprendizaje y competencia
+        <p className={`font-poppins font-normal text-dimWhite text-[16px] leading-[30.8px] max-w-[470px] mt-5`}>
+          Bienvenidos al evento más emocionante de Ingeniería. Elige una opción para mantenerte al tanto de los partidos, estadísticas, tablas de posiciones y todo lo relacionado con nuestro apasionante torneo de fútbol universitario.
         </p>
         <div className={`flex space-x-20 sm:px-16 px-6`}>
           <button className="my-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded">

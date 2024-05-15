@@ -4,8 +4,8 @@ import { close, menu } from "../assets";
 import { Link } from "react-router-dom"
 
 export const navLinks = [
-  { id: "equipos", title: "Equipos", to: "/masculino/equipos" },
   { id: "partidos", title: "Partidos", to: "/masculino/partidos" },
+  { id: "equipos", title: "Equipos", to: "/masculino/equipos" },
   { id: "fase_de_grupos", title: "Fase de grupos", to: "/masculino/fase_de_grupos" },
   { id: "cuadro_de_eliminatorias", title: "Cuadro de eliminatorias", to: "/masculino/cuadro_de_eliminatorias" },
   { id: "estadisticas", title: "Estadísticas", to: "/masculino/estadisticas" },
@@ -17,7 +17,7 @@ const EncabezadoTorneo = () => {
   
   const handleNavClick = (title) => {
     setActive(title);
-    setToggle(false); // Cerrar el menú desplegable después de hacer clic
+    setToggle(false);
   };
 
   return (

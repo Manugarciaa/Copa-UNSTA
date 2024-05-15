@@ -80,7 +80,7 @@
 :root {
   --primary: #ff5500;
   --white: #ffffff;
-  --bg: #f5f5f5;
+  --bg: #23282D;
 }
 
 html {
@@ -109,6 +109,9 @@ html {
 body {
   font-size: 1.6rem;
   background: var(--bg);
+  touch-action: manipulation;
+  overscroll-behavior: none;
+  zoom: 1;
 }
 
 .container {
