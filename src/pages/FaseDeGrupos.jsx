@@ -17,8 +17,8 @@ const TeamRow = ({ team, index }) => {
             <span className="text-white font-bold text-lg">{index + 1}</span>
           </div>
         ) : (
-          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-white to-yellow-100 shadow-md mr-3">
-            <span className="text-gray-600 font-bold text-lg">{index + 1}</span>
+          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-white to-gray-00 shadow-md mr-3">
+            <span className="text-black font-bold text-lg">{index + 1}</span>
           </div>
         )}
       </td>
@@ -28,6 +28,11 @@ const TeamRow = ({ team, index }) => {
       <td className="px-2 py-1 sm:px-3 sm:py-2 text-center text-3xl">{team.name}</td>
       <td className="px-2 py-1 sm:px-3 sm:py-2 font-bold text-center text-xl">{team.points}</td>
       <td className="px-2 py-1 sm:px-3 sm:py-2 text-center text-xl">{team.played}</td>
+      <td className="px-2 py-1 sm:px-3 sm:py-2 text-center text-xl">{team.won}</td>
+      <td className="px-2 py-1 sm:px-3 sm:py-2 text-center text-xl">{team.drawn}</td>
+      <td className="px-2 py-1 sm:px-3 sm:py-2 text-center text-xl">{team.lost}</td>
+      <td className="px-2 py-1 sm:px-3 sm:py-2 text-center text-xl">{team.goalsFor}</td>
+      <td className="px-2 py-1 sm:px-3 sm:py-2 text-center text-xl">{team.goalsAgainst}</td>
       <td className="px-2 py-1 sm:px-3 sm:py-2 text-center text-xl">{team.goalDifference}</td>
     </tr>
   );
@@ -46,9 +51,14 @@ const GroupTable = ({ groupName, teams }) => {
             <th className="px-2 py-1 text-xl">#</th>
             <th className="px-2 py-1 text-xl">Escudo</th>
             <th className="px-2 py-1 text-xl">Equipo</th>
-            <th className="px-2 py-1 text-xl">PTS</th>
+            <th className="px-2 py-1 text-xl">Pts</th>
             <th className="px-2 py-1 text-xl">PJ</th>
-            <th className="px-2 py-1 text-xl">DIF</th>
+            <th className="px-2 py-1 text-xl">PG</th>
+            <th className="px-2 py-1 text-xl">PE</th>
+            <th className="px-2 py-1 text-xl">PP</th>
+            <th className="px-2 py-1 text-xl">GF</th>
+            <th className="px-2 py-1 text-xl">GC</th>
+            <th className="px-2 py-1 text-xl">Dif</th>
           </tr>
         </thead>
         <tbody>
@@ -66,27 +76,27 @@ const Tournament = () => {
     {
       groupName: 'Grupo A',
       teams: [
-        { name: 'Equipo A1', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
-        { name: 'Equipo A2', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
-        { name: 'Equipo A3', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
-        { name: 'Equipo A4', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
-        { name: 'Equipo A5', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
-        { name: 'Equipo A6', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
-        { name: 'Equipo A7', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
-        { name: 'Equipo A8', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo A1', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo A2', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo A3', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo A4', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo A5', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo A6', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo A7', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo A8', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
       ],
     },
     {
       groupName: 'Grupo B',
       teams: [
-        { name: 'Equipo B1', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
-        { name: 'Equipo B2', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
-        { name: 'Equipo B3', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
-        { name: 'Equipo B4', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
-        { name: 'Equipo B5', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
-        { name: 'Equipo B6', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
-        { name: 'Equipo B7', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
-        { name: 'Equipo B8', points: 0, played: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo B1', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo B2', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo B3', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo B4', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo B5', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo B6', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo B7', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
+        { name: 'Equipo B8', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: LogoEquipoA1 },
       ],
     },
   ];
