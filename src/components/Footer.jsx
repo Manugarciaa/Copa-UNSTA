@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const FooterContainer = styled.footer`
   background-color: #23282d;
@@ -50,7 +49,7 @@ const Footer = () => {
         <ContactInfoText>Correo: informes@unsta.edu.ar</ContactInfoText>
       </ContactInfo>
       <SocialLinks>
-        <SocialLink href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        {/* <SocialLink href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
           <FaFacebook />
         </SocialLink>
         <SocialLink href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
@@ -58,7 +57,7 @@ const Footer = () => {
         </SocialLink>
         <SocialLink href="https://www.instagram.com/semana.ingenieria.unsta/" target="_blank" rel="noopener noreferrer">
           <FaInstagram />
-        </SocialLink>
+        </SocialLink> */}
       </SocialLinks>
       <CopyrightText>&copy; Universidad del Norte Santo Tomás de Aquino | Copyright © 2023 Todos los Derechos Reservados.</CopyrightText>
     </FooterContainer>
