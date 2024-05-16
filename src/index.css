@@ -237,3 +237,15 @@ body {
 .swiper-pagination .swiper-pagination-bullet-active {
   background: var(--primary);
 }
+
+.copa-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .copa-wrapper {
+    width: auto;
+  }
+}
