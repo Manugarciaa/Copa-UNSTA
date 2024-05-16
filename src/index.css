@@ -255,3 +255,15 @@ body {
 .swiper-pagination .swiper-pagination-bullet-active:nth-child(n+9) {
   background: green; /* Color verde para los últimos 8 puntos */
 }
+
+.copa-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .copa-wrapper {
+    width: auto;
+  }
+}
