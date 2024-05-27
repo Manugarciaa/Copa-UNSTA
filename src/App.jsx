@@ -7,7 +7,7 @@ import Header from "./components/Header"
 import Home from "./pages/Home";
 import EncabezadoTorneo from "./components/EncabezadoTorneo";
 import Equipos from "./pages/Equipos";
-import EquipoA1 from "./pages/equipos/EquipoA1";
+import DX1 from "./pages/equipos/DX1";
 import EquipoA2 from "./pages/equipos/EquipoA2";
 import EquipoA3 from "./pages/equipos/EquipoA3";
 import EquipoA4 from "./pages/equipos/EquipoA4";
@@ -53,7 +53,7 @@ const App = () => {
               <Route path="/" element={<> <Header /> <Home /> <Footer /> </>} />
               <Route path="/masculino/partidos" element={<> <EncabezadoTorneo /> <Partidos /> </>} />
               <Route path="/masculino/equipos" element={<> <EncabezadoTorneo /> <Equipos /> </>} />
-              <Route path="/masculino/equipos/equipo_A1" element={<> <EquipoA1 /> </>} />
+              <Route path="/masculino/equipos/DX1" element={<> <DX1 /> </>} />
               <Route path="/masculino/equipos/equipo_A2" element={<> <EquipoA2 /> </>} />
               <Route path="/masculino/equipos/equipo_A3" element={<> <EquipoA3 /> </>} />
               <Route path="/masculino/equipos/equipo_A4" element={<> <EquipoA4 /> </>} />
