@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
-import equipo_A1 from '../assets/images/equipo_A1.png';
+import DX1 from '../assets/images/equipo_A1.png';
 import equipo_A2 from '../assets/images/equipo_A2.png';
 import equipo_A3 from '../assets/images/equipo_A3.png';
 import equipo_A4 from '../assets/images/equipo_A4.png';
@@ -60,7 +60,7 @@ function Equipos() {
       >
         {/* Equipo A1 */}
         <SwiperSlide>
-          <img src={equipo_A1} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_A1')}/>
+          <img src={DX1} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/DX1')}/>
         </SwiperSlide>
 
         {/* Equipo A2 */}
