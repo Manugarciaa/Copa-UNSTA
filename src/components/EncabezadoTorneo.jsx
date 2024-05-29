@@ -9,6 +9,7 @@ export const navLinks = [
   { id: "fase_de_grupos", title: "Fase de grupos", to: "/masculino/fase_de_grupos" },
   { id: "cuadro_de_eliminatorias", title: "Cuadro de eliminatorias", to: "/masculino/cuadro_de_eliminatorias" },
   { id: "estadisticas", title: "Estadísticas", to: "/masculino/estadisticas" },
+  { id: "femenino", title: "Femeninio", to: "/femeninio/partidos" },
 ];
 
 const EncabezadoTorneo = () => {

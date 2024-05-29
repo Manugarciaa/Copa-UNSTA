@@ -13,6 +13,11 @@
   --orange-gradient: linear-gradient(to right, #ff9966, #ff7733, #ff5500);
 }
 
+.navbar {
+  z-index: 999; 
+  position: relative;
+}
+
 * {
   scroll-behavior: smooth;
 }
