@@ -41,7 +41,7 @@ const CopaContainerORO = styled.div`
   display: inline-block;
   width: 60%;
   box-sizing: border-box;
-  background: linear-gradient(40deg, #D4AC0D, #7D6608, #F1C40F);
+  background: linear-gradient(40deg, #F7DC6F, #977E1D, #F1C40F);
   background-size: 400% 400%;
   animation: verticalGradientAnimation 5s ease infinite;
 
@@ -62,7 +62,6 @@ const CopaContainerORO = styled.div`
     }
   }
 `;
-
 
 const CopaContainerPLATA = styled.div`
   padding: 0.5rem;
@@ -100,7 +99,7 @@ const CopaContainerBRONCE = styled.div`
   display: inline-block;
   width: 60%;
   box-sizing: border-box;
-  background: linear-gradient(40deg, #AF601A, #784212, #CA6F1E);
+  background: linear-gradient(40deg, #E67E22, #784212, #CA6F1E);
   background-size: 400% 400%;
   animation: gradientAnimation 5s ease infinite;
 
@@ -130,7 +129,7 @@ const CopaContainerLECHE = styled.div`
   display: inline-block;
   width: 60%;
   box-sizing: border-box;
-  background: linear-gradient(45deg, #E8F8F5, #B2BABB, #F2F3F4);
+  background: linear-gradient(45deg, #E8F8F5, #7F8C8D, #F2F3F4);
   background-size: 400% 400%;
   animation: gradientAnimation 5s ease infinite;
 
@@ -213,6 +212,7 @@ const Partido = styled.div`
 
 const CuadroDeEliminatorias = () => {
   return (
+    
     <CuadroContainer className='text-black'>
       <div className="copa-wrapper">
         <CopaContainerORO>
