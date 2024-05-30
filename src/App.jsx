@@ -3,9 +3,9 @@ import React, { useEffect } from 'react';
 
 import styles from "./style";
 
-import Header from "./components/Header"
+import Header from "./components/Header";
 import Home from "./pages/Home";
-import EncabezadoTorneo from "./components/EncabezadoTorneo";
+import EncabezadoTorneo from "./components/EncabezadoTorneoMasculino";
 import Equipos from "./pages/Equipos";
 import DX1 from "./pages/equipos/DX1";
 import EXP from "./pages/equipos/EXP";
@@ -27,7 +27,7 @@ import Partidos from "./pages/Partidos";
 import FaseDeGrupos from "./pages/FaseDeGrupos";
 import CuadroDeEliminatorias from "./pages/CuadroDeEliminatorias";
 import Estadisticas from "./pages/Estadisticas";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 
 const App = () => {
   useEffect(() => {
