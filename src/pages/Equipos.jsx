@@ -8,22 +8,22 @@ import 'swiper/css/navigation';
 
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
-import DX1 from '../assets/images/equipo_A1.png';
-import equipo_A2 from '../assets/images/equipo_A2.png';
-import equipo_A3 from '../assets/images/equipo_A3.png';
-import equipo_A4 from '../assets/images/equipo_A4.png';
-import equipo_A5 from '../assets/images/equipo_A5.png';
-import equipo_A6 from '../assets/images/equipo_A6.png';
-import equipo_A7 from '../assets/images/equipo_A7.png';
-import equipo_A8 from '../assets/images/equipo_A8.png';
-import equipo_B1 from '../assets/images/equipo_B1.png';
-import equipo_B2 from '../assets/images/equipo_B2.png';
-import equipo_B3 from '../assets/images/equipo_B3.png';
-import equipo_B4 from '../assets/images/equipo_B4.png';
-import equipo_B5 from '../assets/images/equipo_B5.png';
-import equipo_B6 from '../assets/images/equipo_B6.png';
-import equipo_B7 from '../assets/images/equipo_B7.png';
-import equipo_B8 from '../assets/images/equipo_B8.png';
+import DX1_logo from '../assets/images/DX1_logo.png';
+import EXP_logo from '../assets/images/EXP_logo.png';
+import HDV_logo from '../assets/images/HDV_logo.png';
+import SZO_logo from '../assets/images/SZO_logo.png';
+import QUE_logo from '../assets/images/QUE_logo.png';
+import PER_logo from '../assets/images/PER_logo.png';
+import BAS_logo from '../assets/images/BAS_logo.png';
+import SCH_logo from '../assets/images/SCH_logo.png';
+import ARQ_logo from '../assets/images/ARQ_logo.png';
+import RAM_logo from '../assets/images/RAM_logo.png';
+import PAB_logo from '../assets/images/PAB_logo.png';
+import TAR_logo from '../assets/images/TAR_logo.png';
+import FEC_logo from '../assets/images/FEC_logo.png';
+import EVS_logo from '../assets/images/EVS_logo.png';
+import ADO_logo from '../assets/images/ADO_logo.png';
+import PMA_logo from '../assets/images/PMA_logo.png';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -58,84 +58,84 @@ function Equipos() {
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="swiper_container"
       >
-        {/* Equipo A1 */}
+        {/* Dominio X+1 */}
         <SwiperSlide>
-          <img src={DX1} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/DX1')}/>
+          <img src={DX1_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/DX1')}/>
         </SwiperSlide>
 
-        {/* Equipo A2 */}
+        {/* Expensive Bottles */}
         <SwiperSlide>
-          <img src={equipo_A2} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_A2')}/>
+          <img src={EXP_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/EXP')}/>
         </SwiperSlide>
 
-        {/* Equipo A3 */}
+        {/* Herederos de Vega */}
         <SwiperSlide>
-          <img src={equipo_A3} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_A3')}/>
+          <img src={HDV_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/HDV')}/>
         </SwiperSlide>
 
-        {/* Equipo A4 */}
+        {/* San Zócalo */}
         <SwiperSlide>
-          <img src={equipo_A4} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_A4')}/>
+          <img src={SZO_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/SZO')}/>
         </SwiperSlide>
 
-        {/* Equipo A5 */}
+        {/* El Queme */}
         <SwiperSlide>
-          <img src={equipo_A5} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_A5')}/>
+          <img src={QUE_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/QUE')}/>
         </SwiperSlide>
 
-        {/* Equipo A6 */}
+        {/* Perritos UNSTA F. C. */}
         <SwiperSlide>
-          <img src={equipo_A6} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_A6')}/>
+          <img src={PER_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/PER')}/>
         </SwiperSlide>
 
-        {/* Equipo A7 */}
+        {/* Bastardos de Richard */}
         <SwiperSlide>
-          <img src={equipo_A7} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_A7')}/>
+          <img src={BAS_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/BAS')}/>
         </SwiperSlide>
 
-        {/* Equipo A8 */}
+        {/* Schalke 23 */}
         <SwiperSlide>
-          <img src={equipo_A8} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_A8')}/>
+          <img src={SCH_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/SCH')}/>
         </SwiperSlide>
 
-        {/* Equipo B1 */}
+        {/* Arquero Fantasma */}
         <SwiperSlide>
-          <img src={equipo_B1} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_B1')}/>
+          <img src={ARQ_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/ARQ')}/>
         </SwiperSlide>
 
-        {/* Equipo B2 */}
+        {/* Rama y sus Ramitas */}
         <SwiperSlide>
-          <img src={equipo_B2} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_B2')}/>
+          <img src={RAM_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/RAM')}/>
         </SwiperSlide>
 
-        {/* Equipo B3 */}
+        {/* Pabellón A */}
         <SwiperSlide>
-          <img src={equipo_B3} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_B3')}/>
+          <img src={PAB_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/PAB')}/>
         </SwiperSlide>
 
-        {/* Equipo B4 */}
+        {/* Tartagal F. C. */}
         <SwiperSlide>
-          <img src={equipo_B4} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_B4')}/>
+          <img src={TAR_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/TAR')}/>
         </SwiperSlide>
 
-        {/* Equipo B5 */}
+        {/* Fecha Libre */}
         <SwiperSlide>
-          <img src={equipo_B5} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_B5')}/>
+          <img src={FEC_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/FEC')}/>
         </SwiperSlide>
 
-        {/* Equipo B6 */}
+        {/* Evolutions F. C. */}
         <SwiperSlide>
-          <img src={equipo_B6} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_B6')}/>
+          <img src={EVS_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/EVS')}/>
         </SwiperSlide>
 
-        {/* Equipo B7 */}
+        {/* Adobe F. C. */}
         <SwiperSlide>
-          <img src={equipo_B7} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_B7')}/>
+          <img src={ADO_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/ADO')}/>
         </SwiperSlide>
 
-        {/* Equipo B8 */}
+        {/* Poca Magia F. C. */}
         <SwiperSlide>
-          <img src={equipo_B8} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/equipo_B8')}/>
+          <img src={PMA_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/PMA')}/>
         </SwiperSlide>
 
         <div className="slider-controler">

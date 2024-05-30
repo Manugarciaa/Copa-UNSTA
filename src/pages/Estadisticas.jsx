@@ -1,28 +1,34 @@
 import React from 'react';
 
-import equipo_A1 from '../assets/images/equipo_A1.png'
-import equipo_A2 from '../assets/images/equipo_A2.png'
-import equipo_A3 from '../assets/images/equipo_A3.png'
-import equipo_A4 from '../assets/images/equipo_A4.png'
-import equipo_A5 from '../assets/images/equipo_A5.png'
-import equipo_A6 from '../assets/images/equipo_A6.png'
-import equipo_A7 from '../assets/images/equipo_A7.png'
-import equipo_A8 from '../assets/images/equipo_A8.png'
-import equipo_B1 from '../assets/images/equipo_B1.png'
-import equipo_B2 from '../assets/images/equipo_B2.png'
+import DX1_logo from '../assets/images/DX1_logo.png';
+import EXP_logo from '../assets/images/EXP_logo.png';
+import HDV_logo from '../assets/images/HDV_logo.png';
+import SZO_logo from '../assets/images/SZO_logo.png';
+import QUE_logo from '../assets/images/QUE_logo.png';
+import PER_logo from '../assets/images/PER_logo.png';
+import BAS_logo from '../assets/images/BAS_logo.png';
+import SCH_logo from '../assets/images/SCH_logo.png';
+import ARQ_logo from '../assets/images/ARQ_logo.png';
+import RAM_logo from '../assets/images/RAM_logo.png';
+import PAB_logo from '../assets/images/PAB_logo.png';
+import TAR_logo from '../assets/images/TAR_logo.png';
+import FEC_logo from '../assets/images/FEC_logo.png';
+import EVS_logo from '../assets/images/EVS_logo.png';
+import ADO_logo from '../assets/images/ADO_logo.png';
+import PMA_logo from '../assets/images/PMA_logo.png';
 
 const Estadisticas = () => {
   const equipos = [
-    { nombre: 'Man City', goles: 93, escudo: equipo_A1 },
-    { nombre: 'Arsenal', goles: 89, escudo: equipo_A2 },
-    { nombre: 'Liverpool', goles: 84, escudo: equipo_A3 },
-    { nombre: 'Newcastle', goles: 81, escudo: equipo_A4 },
-    { nombre: 'Aston Villa', goles: 76, escudo: equipo_A5 },
-    { nombre: 'Chelsea', goles: 75, escudo: equipo_A6 },
-    { nombre: 'Tottenham Hotspur', goles: 71, escudo: equipo_A7 },
-    { nombre: 'West Ham', goles: 59, escudo: equipo_A8 },
-    { nombre: 'Brighton', goles: 55, escudo: equipo_B1 },
-    { nombre: 'Man Utd', goles: 55, escudo: equipo_B2 },
+    { nombre: 'Dominio X+1', goles: 93, escudo: DX1_logo },
+    { nombre: 'Expensive Bottles', goles: 89, escudo: EXP_logo },
+    { nombre: 'Herederos de Vega', goles: 84, escudo: HDV_logo },
+    { nombre: 'San Zócalo', goles: 81, escudo: SZO_logo },
+    { nombre: 'El Queme', goles: 76, escudo: QUE_logo },
+    { nombre: 'Perritos UNSTA F. C.', goles: 75, escudo: PER_logo },
+    { nombre: 'Bastardos de Richard', goles: 71, escudo: BAS_logo },
+    { nombre: 'Schalke 23', goles: 59, escudo: SCH_logo },
+    { nombre: 'Arquero Fantasma', goles: 55, escudo: ARQ_logo },
+    { nombre: 'Rama y sus Ramitas', goles: 55, escudo: RAM_logo },
   ];
 
   return (

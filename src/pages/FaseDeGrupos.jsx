@@ -1,19 +1,19 @@
-import equipo_A1 from "../assets/images/equipo_A1.png";
-import equipo_A2 from "../assets/images/equipo_A2.png";
-import equipo_A3 from "../assets/images/equipo_A3.png";
-import equipo_A4 from "../assets/images/equipo_A4.png";
-import equipo_A5 from "../assets/images/equipo_A5.png";
-import equipo_A6 from "../assets/images/equipo_A6.png";
-import equipo_A7 from "../assets/images/equipo_A7.png";
-import equipo_A8 from "../assets/images/equipo_A8.png";
-import equipo_B1 from "../assets/images/equipo_B1.png";
-import equipo_B2 from "../assets/images/equipo_B2.png";
-import equipo_B3 from "../assets/images/equipo_B3.png";
-import equipo_B4 from "../assets/images/equipo_B4.png";
-import equipo_B5 from "../assets/images/equipo_B5.png";
-import equipo_B6 from "../assets/images/equipo_B6.png";
-import equipo_B7 from "../assets/images/equipo_B7.png";
-import equipo_B8 from "../assets/images/equipo_B8.png";
+import DX1_logo from '../assets/images/DX1_logo.png';
+import EXP_logo from '../assets/images/EXP_logo.png';
+import HDV_logo from '../assets/images/HDV_logo.png';
+import SZO_logo from '../assets/images/SZO_logo.png';
+import QUE_logo from '../assets/images/QUE_logo.png';
+import PER_logo from '../assets/images/PER_logo.png';
+import BAS_logo from '../assets/images/BAS_logo.png';
+import SCH_logo from '../assets/images/SCH_logo.png';
+import ARQ_logo from '../assets/images/ARQ_logo.png';
+import RAM_logo from '../assets/images/RAM_logo.png';
+import PAB_logo from '../assets/images/PAB_logo.png';
+import TAR_logo from '../assets/images/TAR_logo.png';
+import FEC_logo from '../assets/images/FEC_logo.png';
+import EVS_logo from '../assets/images/EVS_logo.png';
+import ADO_logo from '../assets/images/ADO_logo.png';
+import PMA_logo from '../assets/images/PMA_logo.png';
 
 const TeamRow = ({ team, index }) => {
   return (
@@ -91,32 +91,32 @@ const GroupTable = ({ groupName, teams }) => {
   );
 };
 
-const Tournament = () => {
+const FaseDeGrupos = () => {
   const groups = [
     {
       groupName: 'Grupo A',
       teams: [
-        { name: 'Nombre largo a posta F.C.', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_A1 },
-        { name: 'Equipo A2', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_A2 },
-        { name: 'Equipo A3', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_A3 },
-        { name: 'Equipo A4', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_A4 },
-        { name: 'Equipo A5', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_A5 },
-        { name: 'Equipo A6', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_A6 },
-        { name: 'Equipo A7', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_A7 },
-        { name: 'Equipo A8', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_A8 },
+        { name: 'Dominio X+1', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: DX1_logo },
+        { name: 'Expensive Bottles', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: EXP_logo },
+        { name: 'Herederos de Vega', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: HDV_logo },
+        { name: 'San Zócalo', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: SZO_logo },
+        { name: 'El Queme', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: QUE_logo },
+        { name: 'Perritos UNSTA F. C.', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: PER_logo },
+        { name: 'Bastardos de Richard', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: BAS_logo },
+        { name: 'Schalke 23', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: SCH_logo },
       ],
     },
     {
       groupName: 'Grupo B',
       teams: [
-        { name: 'Equipo B1', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_B1 },
-        { name: 'Equipo B2', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_B2 },
-        { name: 'Equipo B3', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_B3 },
-        { name: 'Equipo B4', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_B4 },
-        { name: 'Equipo B5', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_B5 },
-        { name: 'Equipo B6', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_B6 },
-        { name: 'Equipo B7', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_B7 },
-        { name: 'Equipo B8', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: equipo_B8 },
+        { name: 'Arquero Fantasma', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: ARQ_logo },
+        { name: 'Rama y sus Ramitas', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: RAM_logo },
+        { name: 'Pabellón A', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: PAB_logo },
+        { name: 'Tartagal F. C.', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: TAR_logo },
+        { name: 'Fecha Libre', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: FEC_logo },
+        { name: 'Evolutions F. C.', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: EVS_logo },
+        { name: 'Adobe F. C.', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: ADO_logo },
+        { name: 'Poca Magia F. C.', points: 0, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, logo: PMA_logo },
       ],
     },
   ];
@@ -133,4 +133,4 @@ const Tournament = () => {
   );
 };
 
-export default Tournament;
+export default FaseDeGrupos;

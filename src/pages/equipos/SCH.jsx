@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import DX1_logo from '../../assets/images/DX1_logo.png';
+import SCH_logo from '../../assets/images/SCH_logo.png';
 
-const DX1 = () => {
+const SCH = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [jugadores, setJugadores] = useState({});
@@ -28,7 +28,7 @@ const DX1 = () => {
       return data.filter(item => item.ID === id);
     };
 
-    const datosFiltrados = filtrarPorId('DX1');
+    const datosFiltrados = filtrarPorId('SCH');
 
     // Crear un objeto con los jugadores
     const jugadoresObj = {};
@@ -44,14 +44,14 @@ const DX1 = () => {
   return (
     <div className="bg-[#23282D] min-h-screen flex flex-col">
       <header className="bg-gray dark:bg-gray-950 text-white py-4 px-6 mb-8">
-        <h1 className="text-5xl font-bold text-center">Dominio X+1</h1>
+        <h1 className="text-5xl font-bold text-center">Schalke 23</h1>
         {/* <button>volver atras</button> */}
       </header>
       <div className="flex justify-center items-center w-full h-50">
         <img
           alt="Team Logo"
           height={150}
-          src={DX1_logo}
+          src={SCH_logo}
           width={150}
         />
       </div>
@@ -77,4 +77,4 @@ const DX1 = () => {
   )
 }
 
-export default DX1;
+export default SCH;
