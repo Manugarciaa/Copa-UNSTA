@@ -4,18 +4,16 @@ import { close, menu } from "../assets";
 import { Link } from "react-router-dom"
 
 export const navLinks = [
-  { id: "partidos", title: "Partidos", to: "/masculino/partidos" },
-  { id: "equipos", title: "Equipos", to: "/masculino/equipos" },
-  { id: "fase_de_grupos", title: "Fase de grupos", to: "/masculino/fase_de_grupos" },
-  { id: "cuadro_de_eliminatorias", title: "Cuadro de eliminatorias", to: "/masculino/cuadro_de_eliminatorias" },
-  { id: "estadisticas", title: "Estadísticas", to: "/masculino/estadisticas" },
-  { id: "femenino", title: "Femeninio", to: "/femeninio/partidos" },
+  { id: "partidos", title: "Partidos", to: "/femenino/partidos" },
+  { id: "equipos", title: "Equipos", to: "/femenino/equipos" },
+  { id: "fase_de_grupos", title: "Fase de grupos", to: "/femenino/fase_de_grupos" },
+  { id: "estadisticas", title: "Estadísticas", to: "/femenino/estadisticas" },
+  { id: "masculino", title: "Masculino", to: "/masculino/partidos" },
 ];
 
 const EncabezadoTorneo = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
-  
   const handleNavClick = (title) => {
     setActive(title);
     setToggle(false);
@@ -23,8 +21,9 @@ const EncabezadoTorneo = () => {
 
   return (
     <nav className="w-full flex py-5 justify-between items-center navbar">
-      <img src={UNSTA_logo} alt="UNSTA" className="w-[60px] h-[60px]" />
-      
+      <Link to="/">
+        <img src={UNSTA_logo} alt="UNSTA" className="w-[60px] h-[60px]" />
+      </Link>
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li

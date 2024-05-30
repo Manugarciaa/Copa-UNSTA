@@ -18,7 +18,16 @@ import equipo_B7 from "../assets/images/equipo_B7.png";
 import equipo_B8 from "../assets/images/equipo_B8.png";
 
 const GroupTable = ({ groupName, teams }) => {
-  const sortedTeams = teams.sort((a, b) => b.points - a.points);
+  const sortedTeams = teams.sort((a, b) => {
+    if (b.points !== a.points) {
+      return b.points - a.points;
+    } else if (b.goalDifference !== a.goalDifference) {
+      return b.goalDifference - a.goalDifference;
+    } else {
+      return b.goalsFor - a.goalsFor; 
+    }
+  });
+
   return (
     <div className="flex flex-col items-center mb-10 sm:mb-16">
       <div className="w-full flex justify-center mb-5">
@@ -105,7 +114,7 @@ const Tournament = () => {
     };
 
     fetchData();
-    const interval = setInterval(fetchData, 10000);
+    const interval = setInterval(fetchData, 1000);
 
     return () => clearInterval(interval);
   }, []);const grupoA = data.filter(item => item.Grupo === 'Grupo A');

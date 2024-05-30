@@ -3,9 +3,9 @@ import React, { useEffect } from 'react';
 
 import styles from "./style";
 
-import Header from "./components/Header"
+import Header from "./components/Header";
 import Home from "./pages/Home";
-import EncabezadoTorneo from "./components/EncabezadoTorneo";
+import EncabezadoTorneo from "./components/EncabezadoTorneoMasculino";
 import Equipos from "./pages/Equipos";
 import DX1 from "./pages/equipos/DX1";
 import EquipoA2 from "./pages/equipos/EquipoA2";
@@ -27,7 +27,7 @@ import Partidos from "./pages/Partidos";
 import FaseDeGrupos from "./pages/FaseDeGrupos";
 import CuadroDeEliminatorias from "./pages/CuadroDeEliminatorias";
 import Estadisticas from "./pages/Estadisticas";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 
 const App = () => {
   useEffect(() => {
@@ -53,7 +53,7 @@ const App = () => {
               <Route path="/" element={<> <Header /> <Home /> <Footer /> </>} />
               <Route path="/masculino/partidos" element={<> <EncabezadoTorneo /> <Partidos /> </>} />
               <Route path="/masculino/equipos" element={<> <EncabezadoTorneo /> <Equipos /> </>} />
-              <Route path="/masculino/equipos/DX1" element={<> <DX1 /> </>} />
+              <Route path="/masculino/equipos/equipo_A1" element={<> <DX1 /> </>} />
               <Route path="/masculino/equipos/equipo_A2" element={<> <EquipoA2 /> </>} />
               <Route path="/masculino/equipos/equipo_A3" element={<> <EquipoA3 /> </>} />
               <Route path="/masculino/equipos/equipo_A4" element={<> <EquipoA4 /> </>} />
