@@ -121,7 +121,6 @@ const CopaContainerBRONCE = styled.div`
   }
 `;
 
-
 const CopaContainerLECHE = styled.div`
   padding: 0.5rem;
   margin: 1rem;
@@ -212,7 +211,6 @@ const Partido = styled.div`
 
 const CuadroDeEliminatorias = () => {
   return (
-    
     <CuadroContainer className='text-black'>
       <div className="copa-wrapper">
         <CopaContainerORO>
