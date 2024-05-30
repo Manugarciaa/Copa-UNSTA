@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import EncabezadoTorneo from "./components/EncabezadoTorneoMasculino";
 import Equipos from "./pages/Equipos";
-import EquipoA1 from "./pages/equipos/EquipoA1";
+import DX1 from "./pages/equipos/DX1";
 import EquipoA2 from "./pages/equipos/EquipoA2";
 import EquipoA3 from "./pages/equipos/EquipoA3";
 import EquipoA4 from "./pages/equipos/EquipoA4";
@@ -50,28 +50,28 @@ const App = () => {
         <div className={`${styles.boxWidth}`}>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<><Header /><Home /><Footer /></>} />
-              <Route path="/masculino/partidos" element={<><EncabezadoTorneo /><Partidos /></>} />
-              <Route path="/masculino/equipos" element={<><EncabezadoTorneo /><Equipos /></>} />
-              <Route path="/masculino/equipos/equipo_A1" element={<EquipoA1 />} />
-              <Route path="/masculino/equipos/equipo_A2" element={<EquipoA2 />} />
-              <Route path="/masculino/equipos/equipo_A3" element={<EquipoA3 />} />
-              <Route path="/masculino/equipos/equipo_A4" element={<EquipoA4 />} />
-              <Route path="/masculino/equipos/equipo_A5" element={<EquipoA5 />} />
-              <Route path="/masculino/equipos/equipo_A6" element={<EquipoA6 />} />
-              <Route path="/masculino/equipos/equipo_A7" element={<EquipoA7 />} />
-              <Route path="/masculino/equipos/equipo_A8" element={<EquipoA8 />} />
-              <Route path="/masculino/equipos/equipo_B1" element={<EquipoB1 />} />
-              <Route path="/masculino/equipos/equipo_B2" element={<EquipoB2 />} />
-              <Route path="/masculino/equipos/equipo_B3" element={<EquipoB3 />} />
-              <Route path="/masculino/equipos/equipo_B4" element={<EquipoB4 />} />
-              <Route path="/masculino/equipos/equipo_B5" element={<EquipoB5 />} />
-              <Route path="/masculino/equipos/equipo_B6" element={<EquipoB6 />} />
-              <Route path="/masculino/equipos/equipo_B7" element={<EquipoB7 />} />
-              <Route path="/masculino/equipos/equipo_B8" element={<EquipoB8 />} />
-              <Route path="/masculino/fase_de_grupos" element={<><EncabezadoTorneo /><FaseDeGrupos /></>} />
-              <Route path="/masculino/cuadro_de_eliminatorias" element={<><EncabezadoTorneo /><CuadroDeEliminatorias /></>} />
-              <Route path="/masculino/estadisticas" element={<><EncabezadoTorneo /><Estadisticas /></>} />
+              <Route path="/" element={<> <Header /> <Home /> <Footer /> </>} />
+              <Route path="/masculino/partidos" element={<> <EncabezadoTorneo /> <Partidos /> </>} />
+              <Route path="/masculino/equipos" element={<> <EncabezadoTorneo /> <Equipos /> </>} />
+              <Route path="/masculino/equipos/equipo_A1" element={<> <DX1 /> </>} />
+              <Route path="/masculino/equipos/equipo_A2" element={<> <EquipoA2 /> </>} />
+              <Route path="/masculino/equipos/equipo_A3" element={<> <EquipoA3 /> </>} />
+              <Route path="/masculino/equipos/equipo_A4" element={<> <EquipoA4 /> </>} />
+              <Route path="/masculino/equipos/equipo_A5" element={<> <EquipoA5 /> </>} />
+              <Route path="/masculino/equipos/equipo_A6" element={<> <EquipoA6 /> </>} />
+              <Route path="/masculino/equipos/equipo_A7" element={<> <EquipoA7 /> </>} />
+              <Route path="/masculino/equipos/equipo_A8" element={<> <EquipoA8 /> </>} />
+              <Route path="/masculino/equipos/equipo_B1" element={<> <EquipoB1 /> </>} />
+              <Route path="/masculino/equipos/equipo_B2" element={<> <EquipoB2 /> </>} />
+              <Route path="/masculino/equipos/equipo_B3" element={<> <EquipoB3 /> </>} />
+              <Route path="/masculino/equipos/equipo_B4" element={<> <EquipoB4 /> </>} />
+              <Route path="/masculino/equipos/equipo_B5" element={<> <EquipoB5 /> </>} />
+              <Route path="/masculino/equipos/equipo_B6" element={<> <EquipoB6 /> </>} />
+              <Route path="/masculino/equipos/equipo_B7" element={<> <EquipoB7 /> </>} />
+              <Route path="/masculino/equipos/equipo_B8" element={<> <EquipoB8 /> </>} />
+              <Route path="/masculino/fase_de_grupos" element={<> <EncabezadoTorneo /> <FaseDeGrupos /> </>} />
+              <Route path="/masculino/cuadro_de_eliminatorias" element={<> <EncabezadoTorneo /> <CuadroDeEliminatorias /> </>} />
+              <Route path="/masculino/estadisticas" element={<> <EncabezadoTorneo /> <Estadisticas /> </>} />
             </Routes>
           </BrowserRouter>
         </div>
