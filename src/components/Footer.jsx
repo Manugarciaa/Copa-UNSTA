@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FaHome , FaInstagram, FaGithub } from 'react-icons/fa';
 
 const FooterContainer = styled.footer`
   background-color: #23282d;
@@ -12,13 +13,13 @@ const FooterContainer = styled.footer`
 const SocialLinks = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 `;
 
 const SocialLink = styled.a`
   color: #fff;
-  font-size: 1.5rem;
-  margin: 0 0.5rem;
+  font-size: 3rem;
+  margin: 0 1rem;
   transition: color 0.3s ease;
   &:hover {
     color: #ccc;
@@ -49,15 +50,15 @@ const Footer = () => {
         <ContactInfoText>Correo: informes@unsta.edu.ar</ContactInfoText>
       </ContactInfo>
       <SocialLinks>
-        {/* <SocialLink href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-          <FaFacebook />
+        <SocialLink href="https://www.unsta.edu.ar/ingenieria/" target="_blank" rel="noopener noreferrer">
+          <FaHome  />
         </SocialLink>
-        <SocialLink href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-          <FaTwitter />
+        <SocialLink href="https://github.com/Manugarciaa/Copa-UNSTA" target="_blank" rel="noopener noreferrer">
+          <FaGithub />
         </SocialLink>
         <SocialLink href="https://www.instagram.com/semana.ingenieria.unsta/" target="_blank" rel="noopener noreferrer">
           <FaInstagram />
-        </SocialLink> */}
+        </SocialLink>
       </SocialLinks>
       <CopyrightText>&copy; Universidad del Norte Santo Tomás de Aquino | Copyright © 2023 Todos los Derechos Reservados.</CopyrightText>
     </FooterContainer>
