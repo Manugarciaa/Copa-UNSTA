@@ -1,6 +1,5 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
-    ]
-  }
-  
+  "redirects": [
+    { "source": "/ingenieria/semana-de-la-ingenieria-2024/copa-unsta", "destination": "https://www.unsta.edu.ar/ingenieria/semana-de-la-ingenieria-2024/copa-unsta/", "permanent": true }
+  ]
+}
