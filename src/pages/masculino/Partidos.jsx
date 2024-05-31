@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import DX1_logo from '../../assets/images/DX1_logo.png';
-import EXP_logo from '../../assets/images/EXP_logo.png';
-import HDV_logo from '../../assets/images/HDV_logo.png';
-import SZO_logo from '../../assets/images/SZO_logo.png';
-import QUE_logo from '../../assets/images/QUE_logo.png';
-import PER_logo from '../../assets/images/PER_logo.png';
-import BAS_logo from '../../assets/images/BAS_logo.png';
 import SCH_logo from '../../assets/images/SCH_logo.png';
-import ARQ_logo from '../../assets/images/ARQ_logo.png';
-import RAM_logo from '../../assets/images/RAM_logo.png';
 import PAB_logo from '../../assets/images/PAB_logo.png';
-import TAR_logo from '../../assets/images/TAR_logo.png';
+import DX1_logo from '../../assets/images/DX1_logo.png';
+import QUE_logo from '../../assets/images/QUE_logo.png';
+import SZO_logo from '../../assets/images/SZO_logo.png';
 import ANT_logo from '../../assets/images/ANT_logo.png';
+import EXP_logo from '../../assets/images/EXP_logo.png';
+import TAR_logo from '../../assets/images/TAR_logo.png';
+import GHO_logo from '../../assets/images/GHO_logo.png';
+import BAS_logo from '../../assets/images/BAS_logo.png';
+import ARQ_logo from '../../assets/images/ARQ_logo.png';
+import HDV_logo from '../../assets/images/HDV_logo.png';
+import RAM_logo from '../../assets/images/RAM_logo.png';
 import EVS_logo from '../../assets/images/EVS_logo.png';
 import ADO_logo from '../../assets/images/ADO_logo.png';
 import PMA_logo from '../../assets/images/PMA_logo.png';
@@ -48,19 +48,19 @@ const Partidos = () => {
 
   const getLogoForTeam = (teamName) => {
     switch (teamName) {
-      case 'DX1': return <img src={DX1_logo} alt="DX1" className="w-8 h-11" />;
-      case 'EXP': return <img src={EXP_logo} alt="EXP" className="w-8 h-11" />;
-      case 'HDV': return <img src={HDV_logo} alt="HDV" className="w-8 h-11" />;
-      case 'SZO': return <img src={SZO_logo} alt="SZO" className="w-8 h-11" />;
-      case 'QUE': return <img src={QUE_logo} alt="QUE" className="w-8 h-11" />;
-      case 'PER': return <img src={PER_logo} alt="PER" className="w-8 h-11" />;
-      case 'BAS': return <img src={BAS_logo} alt="BAS" className="w-8 h-11" />;
       case 'SCH': return <img src={SCH_logo} alt="SCH" className="w-8 h-11" />;
-      case 'ARQ': return <img src={ARQ_logo} alt="ARQ" className="w-8 h-11" />;
-      case 'RAM': return <img src={RAM_logo} alt="RAM" className="w-8 h-11" />;
       case 'PAB': return <img src={PAB_logo} alt="PAB" className="w-8 h-11" />;
-      case 'TAR': return <img src={TAR_logo} alt="TAR" className="w-8 h-11" />;
+      case 'DX1': return <img src={DX1_logo} alt="DX1" className="w-8 h-11" />;
+      case 'QUE': return <img src={QUE_logo} alt="QUE" className="w-8 h-11" />;
+      case 'SZO': return <img src={SZO_logo} alt="SZO" className="w-8 h-11" />;
       case 'ANT': return <img src={ANT_logo} alt="ANT" className="w-8 h-11" />;
+      case 'EXP': return <img src={EXP_logo} alt="EXP" className="w-8 h-11" />;
+      case 'TAR': return <img src={TAR_logo} alt="TAR" className="w-8 h-11" />;
+      case 'GHO': return <img src={GHO_logo} alt="GHO" className="w-8 h-11" />;
+      case 'BAS': return <img src={BAS_logo} alt="BAS" className="w-8 h-11" />;
+      case 'ARQ': return <img src={ARQ_logo} alt="ARQ" className="w-8 h-11" />;
+      case 'HDV': return <img src={HDV_logo} alt="HDV" className="w-8 h-11" />;
+      case 'RAM': return <img src={RAM_logo} alt="RAM" className="w-8 h-11" />;
       case 'EVS': return <img src={EVS_logo} alt="EVS" className="w-8 h-11" />;
       case 'ADO': return <img src={ADO_logo} alt="ADO" className="w-8 h-11" />;
       case 'PMA': return <img src={PMA_logo} alt="PMA" className="w-8 h-11" />;

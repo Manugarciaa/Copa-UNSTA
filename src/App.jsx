@@ -9,19 +9,19 @@ import EncabezadoM from "./components/EncabezadoM";
 import Footer from "./components/Footer";
 import EquiposM from './pages/masculino/Equipos';
 
-const DX1 = lazy(() => import('./pages/masculino/equipos/DX1'));
-const EXP = lazy(() => import('./pages/masculino/equipos/EXP'));
-const HDV = lazy(() => import('./pages/masculino/equipos/HDV'));
-const SZO = lazy(() => import('./pages/masculino/equipos/SZO'));
-const QUE = lazy(() => import('./pages/masculino/equipos/QUE'));
-const PER = lazy(() => import('./pages/masculino/equipos/PER'));
-const BAS = lazy(() => import('./pages/masculino/equipos/BAS'));
 const SCH = lazy(() => import('./pages/masculino/equipos/SCH'));
-const ARQ = lazy(() => import('./pages/masculino/equipos/ARQ'));
-const RAM = lazy(() => import('./pages/masculino/equipos/RAM'));
 const PAB = lazy(() => import('./pages/masculino/equipos/PAB'));
-const TAR = lazy(() => import('./pages/masculino/equipos/TAR'));
+const DX1 = lazy(() => import('./pages/masculino/equipos/DX1'));
+const QUE = lazy(() => import('./pages/masculino/equipos/QUE'));
+const SZO = lazy(() => import('./pages/masculino/equipos/SZO'));
 const ANT = lazy(() => import('./pages/masculino/equipos/ANT'));
+const EXP = lazy(() => import('./pages/masculino/equipos/EXP'));
+const TAR = lazy(() => import('./pages/masculino/equipos/TAR'));
+const GHO = lazy(() => import('./pages/masculino/equipos/GHO'));
+const BAS = lazy(() => import('./pages/masculino/equipos/BAS'));
+const ARQ = lazy(() => import('./pages/masculino/equipos/ARQ'));
+const HDV = lazy(() => import('./pages/masculino/equipos/HDV'));
+const RAM = lazy(() => import('./pages/masculino/equipos/RAM'));
 const EVS = lazy(() => import('./pages/masculino/equipos/EVS'));
 const ADO = lazy(() => import('./pages/masculino/equipos/ADO'));
 const PMA = lazy(() => import('./pages/masculino/equipos/PMA'));
@@ -55,19 +55,19 @@ const App = () => {
                 <Route path="/" element={<> <Header /> <Home /> <Footer /> </>} />
                 <Route path="/masculino/partidos" element={<> <EncabezadoM /> <PartidosM /> </>} />
                 <Route path="/masculino/equipos" element={<> <EncabezadoM /> <EquiposM /> </>} />
-                <Route path="/masculino/equipos/DX1" element={<> <EncabezadoM /> <DX1 /> </>} />
-                <Route path="/masculino/equipos/EXP" element={<> <EncabezadoM /> <EXP /> </>} />
-                <Route path="/masculino/equipos/HDV" element={<> <EncabezadoM /> <HDV /> </>} />
-                <Route path="/masculino/equipos/SZO" element={<> <EncabezadoM /> <SZO /> </>} />
-                <Route path="/masculino/equipos/QUE" element={<> <EncabezadoM /> <QUE /> </>} />
-                <Route path="/masculino/equipos/PER" element={<> <EncabezadoM /> <PER /> </>} />
-                <Route path="/masculino/equipos/BAS" element={<> <EncabezadoM /> <BAS /> </>} />
                 <Route path="/masculino/equipos/SCH" element={<> <EncabezadoM /> <SCH /> </>} />
-                <Route path="/masculino/equipos/ARQ" element={<> <EncabezadoM /> <ARQ /> </>} />
-                <Route path="/masculino/equipos/RAM" element={<> <EncabezadoM /> <RAM /> </>} />
                 <Route path="/masculino/equipos/PAB" element={<> <EncabezadoM /> <PAB /> </>} />
-                <Route path="/masculino/equipos/TAR" element={<> <EncabezadoM /> <TAR /> </>} />
+                <Route path="/masculino/equipos/DX1" element={<> <EncabezadoM /> <DX1 /> </>} />
+                <Route path="/masculino/equipos/QUE" element={<> <EncabezadoM /> <QUE /> </>} />
+                <Route path="/masculino/equipos/SZO" element={<> <EncabezadoM /> <SZO /> </>} />
                 <Route path="/masculino/equipos/ANT" element={<> <EncabezadoM /> <ANT /> </>} />
+                <Route path="/masculino/equipos/EXP" element={<> <EncabezadoM /> <EXP /> </>} />
+                <Route path="/masculino/equipos/TAR" element={<> <EncabezadoM /> <TAR /> </>} />
+                <Route path="/masculino/equipos/GHO" element={<> <EncabezadoM /> <GHO /> </>} />
+                <Route path="/masculino/equipos/BAS" element={<> <EncabezadoM /> <BAS /> </>} />
+                <Route path="/masculino/equipos/ARQ" element={<> <EncabezadoM /> <ARQ /> </>} />
+                <Route path="/masculino/equipos/HDV" element={<> <EncabezadoM /> <HDV /> </>} />
+                <Route path="/masculino/equipos/RAM" element={<> <EncabezadoM /> <RAM /> </>} />
                 <Route path="/masculino/equipos/EVS" element={<> <EncabezadoM /> <EVS /> </>} />
                 <Route path="/masculino/equipos/ADO" element={<> <EncabezadoM /> <ADO /> </>} />
                 <Route path="/masculino/equipos/PMA" element={<> <EncabezadoM /> <PMA /> </>} />

@@ -37,7 +37,7 @@ const ContactInfo = styled.div`
 
 const ContactInfoText = styled.p`
   font-size: 1rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 `;
 
 const Footer = () => {
@@ -53,14 +53,11 @@ const Footer = () => {
         <SocialLink href="https://www.unsta.edu.ar/ingenieria/" target="_blank" rel="noopener noreferrer">
           <FaHome  />
         </SocialLink>
-        <SocialLink href="https://github.com/Manugarciaa/Copa-UNSTA" target="_blank" rel="noopener noreferrer">
-          <FaGithub />
-        </SocialLink>
         <SocialLink href="https://www.instagram.com/semana.ingenieria.unsta/" target="_blank" rel="noopener noreferrer">
           <FaInstagram />
         </SocialLink>
       </SocialLinks>
-      <CopyrightText>&copy; Universidad del Norte Santo Tomás de Aquino | Copyright © 2023 Todos los Derechos Reservados.</CopyrightText>
+      <CopyrightText>&copy; Universidad del Norte Santo Tomás de Aquino | Copyright © 2024 Todos los Derechos Reservados.</CopyrightText>
     </FooterContainer>
   );
 };

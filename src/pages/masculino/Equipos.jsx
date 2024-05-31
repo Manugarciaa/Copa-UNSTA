@@ -5,38 +5,38 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
-import DX1_logo from '../../assets/images/DX1_logo.png';
-import EXP_logo from '../../assets/images/EXP_logo.png';
-import HDV_logo from '../../assets/images/HDV_logo.png';
-import SZO_logo from '../../assets/images/SZO_logo.png';
-import QUE_logo from '../../assets/images/QUE_logo.png';
-import PER_logo from '../../assets/images/PER_logo.png';
-import BAS_logo from '../../assets/images/BAS_logo.png';
 import SCH_logo from '../../assets/images/SCH_logo.png';
-import ARQ_logo from '../../assets/images/ARQ_logo.png';
-import RAM_logo from '../../assets/images/RAM_logo.png';
 import PAB_logo from '../../assets/images/PAB_logo.png';
-import TAR_logo from '../../assets/images/TAR_logo.png';
+import DX1_logo from '../../assets/images/DX1_logo.png';
+import QUE_logo from '../../assets/images/QUE_logo.png';
+import SZO_logo from '../../assets/images/SZO_logo.png';
 import ANT_logo from '../../assets/images/ANT_logo.png';
+import EXP_logo from '../../assets/images/EXP_logo.png';
+import TAR_logo from '../../assets/images/TAR_logo.png';
+import GHO_logo from '../../assets/images/GHO_logo.png';
+import BAS_logo from '../../assets/images/BAS_logo.png';
+import ARQ_logo from '../../assets/images/ARQ_logo.png';
+import HDV_logo from '../../assets/images/HDV_logo.png';
+import RAM_logo from '../../assets/images/RAM_logo.png';
 import EVS_logo from '../../assets/images/EVS_logo.png';
 import ADO_logo from '../../assets/images/ADO_logo.png';
 import PMA_logo from '../../assets/images/PMA_logo.png';
 import { useNavigate } from 'react-router-dom';
 
 const equipos = [
-  { id: 1, nombre: 'Dominio X+1', logo: DX1_logo, abreviatura: 'DX1' },
-  { id: 2, nombre: 'Expensive Bottles', logo: EXP_logo, abreviatura: 'EXP' },
-  { id: 3, nombre: 'Herederos de Vega', logo: HDV_logo, abreviatura: 'HDV' },
-  { id: 4, nombre: 'San Zócalo', logo: SZO_logo, abreviatura: 'SZO' },
-  { id: 5, nombre: 'El Queme', logo: QUE_logo, abreviatura: 'QUE' },
-  { id: 6, nombre: 'Perritos UNSTA F. C.', logo: PER_logo, abreviatura: 'PER' },
-  { id: 7, nombre: 'Bastardos de Richard', logo: BAS_logo, abreviatura: 'BAS' },
-  { id: 8, nombre: 'Schalke 23', logo: SCH_logo, abreviatura: 'SCH' },
-  { id: 9, nombre: 'Arquero Fantasma', logo: ARQ_logo, abreviatura: 'ARQ' },
-  { id: 10, nombre: 'Rama y sus Ramitas', logo: RAM_logo, abreviatura: 'RAM' },
-  { id: 11, nombre: 'Pabellón A', logo: PAB_logo, abreviatura: 'PAB' },
-  { id: 12, nombre: 'Tartagal F. C.', logo: TAR_logo, abreviatura: 'TAR' },
-  { id: 13, nombre: 'Anti Canva F. C.', logo: ANT_logo, abreviatura: 'ANT' },
+  { id: 1, nombre: 'Schalke 23', logo: SCH_logo, abreviatura: 'SCH' },
+  { id: 2, nombre: 'Pabellón A', logo: PAB_logo, abreviatura: 'PAB' },
+  { id: 3, nombre: 'Dominio X+1', logo: DX1_logo, abreviatura: 'DX1' },
+  { id: 4, nombre: 'El Queme', logo: QUE_logo, abreviatura: 'QUE' },
+  { id: 5, nombre: 'San Zócalo', logo: SZO_logo, abreviatura: 'SZO' },
+  { id: 6, nombre: 'Anti Canva F. C.', logo: ANT_logo, abreviatura: 'ANT' },
+  { id: 7, nombre: 'Expensive Bottles', logo: EXP_logo, abreviatura: 'EXP' },
+  { id: 8, nombre: 'Tartagal F. C.', logo: TAR_logo, abreviatura: 'TAR' },
+  { id: 9, nombre: 'Ghostbusters', logo: GHO_logo, abreviatura: 'GHO' },
+  { id: 10, nombre: 'Bastardos de Richard', logo: BAS_logo, abreviatura: 'BAS' },
+  { id: 11, nombre: 'Arquero Fantasma', logo: ARQ_logo, abreviatura: 'ARQ' },
+  { id: 12, nombre: 'Herederos de Vega', logo: HDV_logo, abreviatura: 'HDV' },
+  { id: 13, nombre: 'Rama y sus Ramitas', logo: RAM_logo, abreviatura: 'RAM' },
   { id: 14, nombre: 'Evolutions F. C.', logo: EVS_logo, abreviatura: 'EVS' },
   { id: 15, nombre: 'Adobe F. C.', logo: ADO_logo, abreviatura: 'ADO' },
   { id: 16, nombre: 'Poca Magia F. C.', logo: PMA_logo, abreviatura: 'PMA' },

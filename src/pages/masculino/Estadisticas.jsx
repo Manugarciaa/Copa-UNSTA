@@ -1,18 +1,17 @@
 import React from 'react';
-
-import DX1_logo from '../../assets/images/DX1_logo.png';
-import EXP_logo from '../../assets/images/EXP_logo.png';
-import HDV_logo from '../../assets/images/HDV_logo.png';
-import SZO_logo from '../../assets/images/SZO_logo.png';
-import QUE_logo from '../../assets/images/QUE_logo.png';
-import PER_logo from '../../assets/images/PER_logo.png';
-import BAS_logo from '../../assets/images/BAS_logo.png';
 import SCH_logo from '../../assets/images/SCH_logo.png';
-import ARQ_logo from '../../assets/images/ARQ_logo.png';
-import RAM_logo from '../../assets/images/RAM_logo.png';
 import PAB_logo from '../../assets/images/PAB_logo.png';
-import TAR_logo from '../../assets/images/TAR_logo.png';
+import DX1_logo from '../../assets/images/DX1_logo.png';
+import QUE_logo from '../../assets/images/QUE_logo.png';
+import SZO_logo from '../../assets/images/SZO_logo.png';
 import ANT_logo from '../../assets/images/ANT_logo.png';
+import EXP_logo from '../../assets/images/EXP_logo.png';
+import TAR_logo from '../../assets/images/TAR_logo.png';
+import GHO_logo from '../../assets/images/GHO_logo.png';
+import BAS_logo from '../../assets/images/BAS_logo.png';
+import ARQ_logo from '../../assets/images/ARQ_logo.png';
+import HDV_logo from '../../assets/images/HDV_logo.png';
+import RAM_logo from '../../assets/images/RAM_logo.png';
 import EVS_logo from '../../assets/images/EVS_logo.png';
 import ADO_logo from '../../assets/images/ADO_logo.png';
 import PMA_logo from '../../assets/images/PMA_logo.png';
@@ -24,7 +23,7 @@ const Estadisticas = () => {
     { nombre: 'Herederos de Vega', goles: 84, escudo: HDV_logo },
     { nombre: 'San Zócalo', goles: 81, escudo: SZO_logo },
     { nombre: 'El Queme', goles: 76, escudo: QUE_logo },
-    { nombre: 'Perritos UNSTA F. C.', goles: 75, escudo: PER_logo },
+    { nombre: 'Ghostbusters', goles: 75, escudo: GHO_logo },
     { nombre: 'Bastardos de Richard', goles: 71, escudo: BAS_logo },
     { nombre: 'Schalke 23', goles: 59, escudo: SCH_logo },
     { nombre: 'Arquero Fantasma', goles: 55, escudo: ARQ_logo },
