@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import PMA_logo from '../../assets/images/PMA_logo.png';
+import TAR_logo from '../../../assets/images/TAR_logo.png';
 
-const PMA = () => {
+const TAR = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [jugadores, setJugadores] = useState({});
@@ -28,7 +28,7 @@ const PMA = () => {
       return data.filter(item => item.ID === id);
     };
 
-    const datosFiltrados = filtrarPorId('PMA');
+    const datosFiltrados = filtrarPorId('TAR');
 
     // Crear un objeto con los jugadores
     const jugadoresObj = {};
@@ -44,14 +44,14 @@ const PMA = () => {
   return (
     <div className="bg-[#23282D] min-h-screen flex flex-col">
       <header className="bg-gray dark:bg-gray-950 text-white py-4 px-6 mb-8">
-        <h1 className="text-5xl font-bold text-center">Poca Magia F. C.</h1>
+        <h1 className="text-5xl font-bold text-center">Tartagal F. C.</h1>
         {/* <button>volver atras</button> */}
       </header>
       <div className="flex justify-center items-center w-full h-50">
         <img
           alt="Team Logo"
           height={150}
-          src={PMA_logo}
+          src={TAR_logo}
           width={150}
         />
       </div>
@@ -77,4 +77,4 @@ const PMA = () => {
   )
 }
 
-export default PMA;
+export default TAR;

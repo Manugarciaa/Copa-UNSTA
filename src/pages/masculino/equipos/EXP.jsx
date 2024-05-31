@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import EVS_logo from '../../assets/images/EVS_logo.png';
+import EXP_logo from '../../../assets/images/EXP_logo.png';
 
-const EVS = () => {
+const EXP = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [jugadores, setJugadores] = useState({});
@@ -28,7 +28,7 @@ const EVS = () => {
       return data.filter(item => item.ID === id);
     };
 
-    const datosFiltrados = filtrarPorId('EVS');
+    const datosFiltrados = filtrarPorId('EXP');
 
     // Crear un objeto con los jugadores
     const jugadoresObj = {};
@@ -44,14 +44,14 @@ const EVS = () => {
   return (
     <div className="bg-[#23282D] min-h-screen flex flex-col">
       <header className="bg-gray dark:bg-gray-950 text-white py-4 px-6 mb-8">
-        <h1 className="text-5xl font-bold text-center">Evolutions F. C.</h1>
+        <h1 className="text-5xl font-bold text-center">Expensive Bottles</h1>
         {/* <button>volver atras</button> */}
       </header>
       <div className="flex justify-center items-center w-full h-50">
         <img
           alt="Team Logo"
           height={150}
-          src={EVS_logo}
+          src={EXP_logo}
           width={150}
         />
       </div>
@@ -77,4 +77,5 @@ const EVS = () => {
   )
 }
 
-export default EVS;
+
+export default EXP;

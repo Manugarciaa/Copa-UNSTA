@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import DX1_logo from '../assets/images/DX1_logo.png';
-import EXP_logo from '../assets/images/EXP_logo.png';
-import HDV_logo from '../assets/images/HDV_logo.png';
-import SZO_logo from '../assets/images/SZO_logo.png';
-import QUE_logo from '../assets/images/QUE_logo.png';
-import PER_logo from '../assets/images/PER_logo.png';
-import BAS_logo from '../assets/images/BAS_logo.png';
-import SCH_logo from '../assets/images/SCH_logo.png';
-import ARQ_logo from '../assets/images/ARQ_logo.png';
-import RAM_logo from '../assets/images/RAM_logo.png';
-import PAB_logo from '../assets/images/PAB_logo.png';
-import TAR_logo from '../assets/images/TAR_logo.png';
-import FEC_logo from '../assets/images/FEC_logo.png';
-import EVS_logo from '../assets/images/EVS_logo.png';
-import ADO_logo from '../assets/images/ADO_logo.png';
-import PMA_logo from '../assets/images/PMA_logo.png';
+import DX1_logo from '../../assets/images/DX1_logo.png';
+import EXP_logo from '../../assets/images/EXP_logo.png';
+import HDV_logo from '../../assets/images/HDV_logo.png';
+import SZO_logo from '../../assets/images/SZO_logo.png';
+import QUE_logo from '../../assets/images/QUE_logo.png';
+import PER_logo from '../../assets/images/PER_logo.png';
+import BAS_logo from '../../assets/images/BAS_logo.png';
+import SCH_logo from '../../assets/images/SCH_logo.png';
+import ARQ_logo from '../../assets/images/ARQ_logo.png';
+import RAM_logo from '../../assets/images/RAM_logo.png';
+import PAB_logo from '../../assets/images/PAB_logo.png';
+import TAR_logo from '../../assets/images/TAR_logo.png';
+import ANT_logo from '../../assets/images/ANT_logo.png';
+import EVS_logo from '../../assets/images/EVS_logo.png';
+import ADO_logo from '../../assets/images/ADO_logo.png';
+import PMA_logo from '../../assets/images/PMA_logo.png';
 
 const GroupTable = ({ groupName, teams }) => {
   const sortedTeams = teams.sort((a, b) => {
@@ -120,6 +120,15 @@ const FaseDeGrupos = () => {
   }, []);const grupoA = data.filter(item => item.Grupo === 'Grupo A');
   const grupoB = data.filter(item => item.Grupo === 'Grupo B');
   
+  function getLogo(id) {
+    try {
+      return eval(`${id}_logo`);
+    } catch (e) {
+      console.warn(`Logo para ${id} no encontrado`);
+      return null;
+    }
+  }
+
   const groups = [
     {
       groupName: 'Grupo A',
@@ -133,7 +142,7 @@ const FaseDeGrupos = () => {
         goalsFor: item.GF,
         goalsAgainst: item.GC,
         goalDifference: item['Dif'],
-        logo: index < 8 ? eval(`equipo_A${index + 1}`) : null,
+        logo: getLogo(item.ID)
       })),
     },
     {
@@ -148,7 +157,7 @@ const FaseDeGrupos = () => {
         goalsFor: item.GF,
         goalsAgainst: item.GC,
         goalDifference: item['Dif'],
-        logo: index < 8 ? eval(`equipo_B${index + 1}`) : null,
+        logo: getLogo(item.ID)
       })),
     },
   ];
@@ -159,7 +168,7 @@ const FaseDeGrupos = () => {
         <span className="text-gradient">Fase de grupos</span>
       </h1>
       {isLoading ? (
-        <div>Loading...</div>
+        <div>Cargando...</div>
       ) : (
         groups.map((group, index) => (
           <GroupTable key={index} groupName={group.groupName} teams={group.teams} />

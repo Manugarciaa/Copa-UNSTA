@@ -11,7 +11,7 @@ export const navLinks = [
   { id: "masculino", title: "Masculino", to: "/masculino/partidos" },
 ];
 
-const EncabezadoTorneo = () => {
+const EncabezadoF = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
   const handleNavClick = (title) => {
@@ -65,4 +65,4 @@ const EncabezadoTorneo = () => {
   );
 };
 
-export default EncabezadoTorneo;
+export default EncabezadoF;

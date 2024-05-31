@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ARQ_logo from '../../assets/images/ARQ_logo.png';
+import RAM_logo from '../../../assets/images/RAM_logo.png';
 
-const ARQ = () => {
+const RAM = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [jugadores, setJugadores] = useState({});
@@ -28,7 +28,7 @@ const ARQ = () => {
       return data.filter(item => item.ID === id);
     };
 
-    const datosFiltrados = filtrarPorId('ARQ');
+    const datosFiltrados = filtrarPorId('RAM');
 
     // Crear un objeto con los jugadores
     const jugadoresObj = {};
@@ -44,14 +44,14 @@ const ARQ = () => {
   return (
     <div className="bg-[#23282D] min-h-screen flex flex-col">
       <header className="bg-gray dark:bg-gray-950 text-white py-4 px-6 mb-8">
-        <h1 className="text-5xl font-bold text-center">Arquero Fantasma</h1>
+        <h1 className="text-5xl font-bold text-center">Rama y sus Ramitas</h1>
         {/* <button>volver atras</button> */}
       </header>
       <div className="flex justify-center items-center w-full h-50">
         <img
           alt="Team Logo"
           height={150}
-          src={ARQ_logo}
+          src={RAM_logo}
           width={150}
         />
       </div>
@@ -77,4 +77,4 @@ const ARQ = () => {
   )
 }
 
-export default ARQ;
+export default RAM;

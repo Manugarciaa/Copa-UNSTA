@@ -1,22 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LogoEquipoA1 from '../assets/LogoEquipoA1.webp';
-import equipo_A1 from '../assets/images/equipo_A1.png';
-import equipo_A2 from '../assets/images/equipo_A2.png';
-import equipo_A3 from '../assets/images/equipo_A3.png';
-import equipo_A4 from '../assets/images/equipo_A4.png';
-import equipo_A5 from '../assets/images/equipo_A5.png';
-import equipo_A6 from '../assets/images/equipo_A6.png';
-import equipo_A7 from '../assets/images/equipo_A7.png';
-import equipo_A8 from '../assets/images/equipo_A8.png';
-import equipo_B1 from '../assets/images/equipo_B1.png';
-import equipo_B2 from '../assets/images/equipo_B2.png';
-import equipo_B3 from '../assets/images/equipo_B3.png';
-import equipo_B4 from '../assets/images/equipo_B4.png';
-import equipo_B5 from '../assets/images/equipo_B5.png';
-import equipo_B6 from '../assets/images/equipo_B6.png';
-import equipo_B7 from '../assets/images/equipo_B7.png';
-import equipo_B8 from '../assets/images/equipo_B8.png';
+import TBD_logo from '../../assets/images/TBD_logo.png';
 
 const CuadroContainer = styled.div`
   display: grid;
@@ -216,45 +200,45 @@ const CuadroDeEliminatorias = () => {
         <CopaContainerORO>
           <Fase>
             <div className="header" style={{ textAlign: 'center' }}>
-              <img src={LogoEquipoA1} alt="Copa de Oro" style={{ width: '50px', height: 'auto', display: 'block', margin: 'auto' }} />
+              <img src={TBD_logo} alt="Copa de Oro" style={{ width: '50px', height: 'auto', display: 'block', margin: 'auto' }} />
               <h2 style={{ fontSize: '20px' }}>COPA DE ORO</h2>
             </div>
             <Partido>
               <Etapa>Semifinal</Etapa>
               <div className="equipo">
-                <img src={equipo_A1} alt="Equipo 1" />
-                <span>EA1</span>
+                <img src={TBD_logo} alt="Equipo 1" />
+                <span>???</span>
               </div>
               <div className="resultado">2:0</div>
               <div className="equipo">
-                <img src={equipo_A2} alt="Equipo 2" />
-                <span>EA2</span>
+                <img src={TBD_logo} alt="Equipo 2" />
+                <span>???</span>
               </div>
             </Partido>
             <div style={{ borderLeft: '3px solid gray', height: '20px', marginLeft: '50%' }}></div>
             <Partido>
               <Etapa>Final</Etapa>
               <div className="equipo">
-                <img src={equipo_B1} alt="Equipo 3" />
-                <span>EA3</span>
+                <img src={TBD_logo} alt="Equipo 3" />
+                <span>???</span>
               </div>
               <div className="resultado" style={{ fontWeight: 'normal' }}>01 jun.</div>
               <div className="equipo">
-                <img src={equipo_A1} alt="Equipo 4" />
-                <span>EA4</span>
+                <img src={TBD_logo} alt="Equipo 4" />
+                <span>???</span>
               </div>
             </Partido>
             <div style={{ borderLeft: '3px solid gray', height: '20px', marginLeft: '50%' }}></div>
             <Partido>
               <Etapa>Semifinal</Etapa>
               <div className="equipo">
-                <img src={equipo_B2} alt="Equipo 5" />
-                <span>EA5</span>
+                <img src={TBD_logo} alt="Equipo 5" />
+                <span>???</span>
               </div>
               <div className="resultado">3:4</div>
               <div className="equipo">
-                <img src={equipo_B1} alt="Equipo 6" />
-                <span>EA6</span>
+                <img src={TBD_logo} alt="Equipo 6" />
+                <span>???</span>
               </div>
             </Partido>
           </Fase>
@@ -264,45 +248,45 @@ const CuadroDeEliminatorias = () => {
         <CopaContainerPLATA>
           <Fase>
             <div className="header" style={{ textAlign: 'center' }}>
-              <img src={LogoEquipoA1} alt="Copa de Oro" style={{ width: '50px', height: 'auto', display: 'block', margin: 'auto' }} />
+              <img src={TBD_logo} alt="Copa de Oro" style={{ width: '50px', height: 'auto', display: 'block', margin: 'auto' }} />
               <h2 style={{ fontSize: '20px' }}>COPA DE PLATA</h2>
             </div>
             <Partido>
               <Etapa>Semifinal</Etapa>
               <div className="equipo">
-                <img src={equipo_A3} alt="Equipo 1" />
-                <span>EA1</span>
+                <img src={TBD_logo} alt="Equipo 1" />
+                <span>???</span>
               </div>
               <div className="resultado">2:0</div>
               <div className="equipo">
-                <img src={equipo_B4} alt="Equipo 2" />
-                <span>EA2</span>
+                <img src={TBD_logo} alt="Equipo 2" />
+                <span>???</span>
               </div>
             </Partido>
             <div style={{ borderLeft: '3px solid gray', height: '20px', marginLeft: '50%' }}></div>
             <Partido>
               <Etapa>Final</Etapa>
               <div className="equipo">
-                <img src={equipo_B3} alt="Equipo 3" />
-                <span>EA3</span>
+                <img src={TBD_logo} alt="Equipo 3" />
+                <span>???</span>
               </div>
               <div className="resultado" style={{ fontWeight: 'normal' }}>01 jun.</div>
               <div className="equipo">
-                <img src={equipo_A3} alt="Equipo 4" />
-                <span>EA4</span>
+                <img src={TBD_logo} alt="Equipo 4" />
+                <span>???</span>
               </div>
             </Partido>
             <div style={{ borderLeft: '3px solid gray', height: '20px', marginLeft: '50%' }}></div>
             <Partido>
               <Etapa>Semifinal</Etapa>
               <div className="equipo">
-                <img src={equipo_A4} alt="Equipo 5" />
-                <span>EA5</span>
+                <img src={TBD_logo} alt="Equipo 5" />
+                <span>???</span>
               </div>
               <div className="resultado">3:4</div>
               <div className="equipo">
-                <img src={equipo_B3} alt="Equipo 6" />
-                <span>EA6</span>
+                <img src={TBD_logo} alt="Equipo 6" />
+                <span>???</span>
               </div>
             </Partido>
           </Fase>
@@ -312,45 +296,45 @@ const CuadroDeEliminatorias = () => {
         <CopaContainerBRONCE>
           <Fase>
             <div className="header" style={{ textAlign: 'center' }}>
-              <img src={LogoEquipoA1} alt="Copa de Oro" style={{ width: '50px', height: 'auto', display: 'block', margin: 'auto' }} />
+              <img src={TBD_logo} alt="Copa de Oro" style={{ width: '50px', height: 'auto', display: 'block', margin: 'auto' }} />
               <h2 style={{ fontSize: '20px' }}>COPA DE BRONCE</h2>
             </div>
             <Partido>
               <Etapa>Semifinal</Etapa>
               <div className="equipo">
-                <img src={equipo_A5} alt="Equipo 1" />
-                <span>EA1</span>
+                <img src={TBD_logo} alt="Equipo 1" />
+                <span>???</span>
               </div>
               <div className="resultado">2:0</div>
               <div className="equipo">
-                <img src={equipo_B6} alt="Equipo 2" />
-                <span>EA2</span>
+                <img src={TBD_logo} alt="Equipo 2" />
+                <span>???</span>
               </div>
             </Partido>
             <div style={{ borderLeft: '3px solid gray', height: '20px', marginLeft: '50%' }}></div>
             <Partido>
               <Etapa>Final</Etapa>
               <div className="equipo">
-                <img src={equipo_B6} alt="Equipo 3" />
-                <span>EA3</span>
+                <img src={TBD_logo} alt="Equipo 3" />
+                <span>???</span>
               </div>
               <div className="resultado" style={{ fontWeight: 'normal' }}>01 jun.</div>
               <div className="equipo">
-                <img src={equipo_A6} alt="Equipo 4" />
-                <span>EA4</span>
+                <img src={TBD_logo} alt="Equipo 4" />
+                <span>???</span>
               </div>
             </Partido>
             <div style={{ borderLeft: '3px solid gray', height: '20px', marginLeft: '50%' }}></div>
             <Partido>
               <Etapa>Semifinal</Etapa>
               <div className="equipo">
-                <img src={equipo_A6} alt="Equipo 5" />
-                <span>EA5</span>
+                <img src={TBD_logo} alt="Equipo 5" />
+                <span>???</span>
               </div>
               <div className="resultado">3:4</div>
               <div className="equipo">
-                <img src={equipo_B5} alt="Equipo 6" />
-                <span>EA6</span>
+                <img src={TBD_logo} alt="Equipo 6" />
+                <span>???</span>
               </div>
             </Partido>
           </Fase>
@@ -360,45 +344,45 @@ const CuadroDeEliminatorias = () => {
         <CopaContainerLECHE>
           <Fase>
             <div className="header" style={{ textAlign: 'center' }}>
-              <img src={LogoEquipoA1} alt="Copa de Oro" style={{ width: '50px', height: 'auto', display: 'block', margin: 'auto' }} />
+              <img src={TBD_logo} alt="Copa de Oro" style={{ width: '50px', height: 'auto', display: 'block', margin: 'auto' }} />
               <h2 style={{ fontSize: '20px' }}>COPA DE LECHE</h2>
             </div>
             <Partido>
               <Etapa>Semifinal</Etapa>
               <div className="equipo">
-                <img src={equipo_A7} alt="Equipo 1" />
-                <span>EA1</span>
+                <img src={TBD_logo} alt="Equipo 1" />
+                <span>???</span>
               </div>
               <div className="resultado">2:0</div>
               <div className="equipo">
-                <img src={equipo_B8} alt="Equipo 2" />
-                <span>EA2</span>
+                <img src={TBD_logo} alt="Equipo 2" />
+                <span>???</span>
               </div>
             </Partido>
             <div style={{ borderLeft: '3px solid gray', height: '20px', marginLeft: '50%' }}></div>
             <Partido>
               <Etapa>Final</Etapa>
               <div className="equipo">
-                <img src={equipo_B8} alt="Equipo 3" />
-                <span>EA3</span>
+                <img src={TBD_logo} alt="Equipo 3" />
+                <span>???</span>
               </div>
               <div className="resultado" style={{ fontWeight: 'normal' }}>01 jun.</div>
               <div className="equipo">
-                <img src={equipo_A8} alt="Equipo 4" />
-                <span>EA4</span>
+                <img src={TBD_logo} alt="Equipo 4" />
+                <span>???</span>
               </div>
             </Partido>
             <div style={{ borderLeft: '3px solid gray', height: '20px', marginLeft: '50%' }}></div>
             <Partido>
               <Etapa>Semifinal</Etapa>
               <div className="equipo">
-                <img src={equipo_A8} alt="Equipo 5" />
-                <span>EA5</span>
+                <img src={TBD_logo} alt="Equipo 5" />
+                <span>???</span>
               </div>
               <div className="resultado">3:4</div>
               <div className="equipo">
-                <img src={equipo_B7} alt="Equipo 6" />
-                <span>EA6</span>
+                <img src={TBD_logo} alt="Equipo 6" />
+                <span>???</span>
               </div>
             </Partido>
           </Fase>

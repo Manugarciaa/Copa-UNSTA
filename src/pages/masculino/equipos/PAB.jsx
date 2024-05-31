@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ADO_logo from '../../assets/images/ADO_logo.png';
+import PAB_logo from '../../../assets/images/PAB_logo.png';
 
-const ADO = () => {
+const PAB = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [jugadores, setJugadores] = useState({});
@@ -28,7 +28,7 @@ const ADO = () => {
       return data.filter(item => item.ID === id);
     };
 
-    const datosFiltrados = filtrarPorId('ADO');
+    const datosFiltrados = filtrarPorId('PAB');
 
     // Crear un objeto con los jugadores
     const jugadoresObj = {};
@@ -44,14 +44,14 @@ const ADO = () => {
   return (
     <div className="bg-[#23282D] min-h-screen flex flex-col">
       <header className="bg-gray dark:bg-gray-950 text-white py-4 px-6 mb-8">
-        <h1 className="text-5xl font-bold text-center">Adobe F. C.</h1>
+        <h1 className="text-5xl font-bold text-center">Pabellón A</h1>
         {/* <button>volver atras</button> */}
       </header>
       <div className="flex justify-center items-center w-full h-50">
         <img
           alt="Team Logo"
           height={150}
-          src={ADO_logo}
+          src={PAB_logo}
           width={150}
         />
       </div>
@@ -77,4 +77,4 @@ const ADO = () => {
   )
 }
 
-export default ADO;
+export default PAB;
