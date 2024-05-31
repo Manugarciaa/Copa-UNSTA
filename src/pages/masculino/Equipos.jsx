@@ -1,13 +1,10 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
-
 import DX1_logo from '../../assets/images/DX1_logo.png';
 import EXP_logo from '../../assets/images/EXP_logo.png';
 import HDV_logo from '../../assets/images/HDV_logo.png';
@@ -24,14 +21,32 @@ import ANT_logo from '../../assets/images/ANT_logo.png';
 import EVS_logo from '../../assets/images/EVS_logo.png';
 import ADO_logo from '../../assets/images/ADO_logo.png';
 import PMA_logo from '../../assets/images/PMA_logo.png';
-
 import { useNavigate } from 'react-router-dom';
+
+const equipos = [
+  { id: 1, nombre: 'Dominio X+1', logo: DX1_logo, abreviatura: 'DX1' },
+  { id: 2, nombre: 'Expensive Bottles', logo: EXP_logo, abreviatura: 'EXP' },
+  { id: 3, nombre: 'Herederos de Vega', logo: HDV_logo, abreviatura: 'HDV' },
+  { id: 4, nombre: 'San Zócalo', logo: SZO_logo, abreviatura: 'SZO' },
+  { id: 5, nombre: 'El Queme', logo: QUE_logo, abreviatura: 'QUE' },
+  { id: 6, nombre: 'Perritos UNSTA F. C.', logo: PER_logo, abreviatura: 'PER' },
+  { id: 7, nombre: 'Bastardos de Richard', logo: BAS_logo, abreviatura: 'BAS' },
+  { id: 8, nombre: 'Schalke 23', logo: SCH_logo, abreviatura: 'SCH' },
+  { id: 9, nombre: 'Arquero Fantasma', logo: ARQ_logo, abreviatura: 'ARQ' },
+  { id: 10, nombre: 'Rama y sus Ramitas', logo: RAM_logo, abreviatura: 'RAM' },
+  { id: 11, nombre: 'Pabellón A', logo: PAB_logo, abreviatura: 'PAB' },
+  { id: 12, nombre: 'Tartagal F. C.', logo: TAR_logo, abreviatura: 'TAR' },
+  { id: 13, nombre: 'Anti Canva F. C.', logo: ANT_logo, abreviatura: 'ANT' },
+  { id: 14, nombre: 'Evolutions F. C.', logo: EVS_logo, abreviatura: 'EVS' },
+  { id: 15, nombre: 'Adobe F. C.', logo: ADO_logo, abreviatura: 'ADO' },
+  { id: 16, nombre: 'Poca Magia F. C.', logo: PMA_logo, abreviatura: 'PMA' },
+];
 
 function Equipos() {
   const navigate = useNavigate();
 
-  const handleImageClick = (route) => {
-    navigate(route);
+  const handleImageClick = (abreviatura) => {
+    navigate(`/masculino/equipos/${abreviatura}`);
   };
 
   return (
@@ -58,85 +73,15 @@ function Equipos() {
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="swiper_container"
       >
-        {/* Dominio X+1 */}
-        <SwiperSlide>
-          <img src={DX1_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/DX1')}/>
-        </SwiperSlide>
-
-        {/* Expensive Bottles */}
-        <SwiperSlide>
-          <img src={EXP_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/EXP')}/>
-        </SwiperSlide>
-
-        {/* Herederos de Vega */}
-        <SwiperSlide>
-          <img src={HDV_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/HDV')}/>
-        </SwiperSlide>
-
-        {/* San Zócalo */}
-        <SwiperSlide>
-          <img src={SZO_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/SZO')}/>
-        </SwiperSlide>
-
-        {/* El Queme */}
-        <SwiperSlide>
-          <img src={QUE_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/QUE')}/>
-        </SwiperSlide>
-
-        {/* Perritos UNSTA F. C. */}
-        <SwiperSlide>
-          <img src={PER_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/PER')}/>
-        </SwiperSlide>
-
-        {/* Bastardos de Richard */}
-        <SwiperSlide>
-          <img src={BAS_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/BAS')}/>
-        </SwiperSlide>
-
-        {/* Schalke 23 */}
-        <SwiperSlide>
-          <img src={SCH_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/SCH')}/>
-        </SwiperSlide>
-
-        {/* Arquero Fantasma */}
-        <SwiperSlide>
-          <img src={ARQ_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/ARQ')}/>
-        </SwiperSlide>
-
-        {/* Rama y sus Ramitas */}
-        <SwiperSlide>
-          <img src={RAM_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/RAM')}/>
-        </SwiperSlide>
-
-        {/* Pabellón A */}
-        <SwiperSlide>
-          <img src={PAB_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/PAB')}/>
-        </SwiperSlide>
-
-        {/* Tartagal F. C. */}
-        <SwiperSlide>
-          <img src={TAR_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/TAR')}/>
-        </SwiperSlide>
-
-        {/* Anti Canva F. C. */}
-        <SwiperSlide>
-          <img src={ANT_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/ANT')}/>
-        </SwiperSlide>
-
-        {/* Evolutions F. C. */}
-        <SwiperSlide>
-          <img src={EVS_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/EVS')}/>
-        </SwiperSlide>
-
-        {/* Adobe F. C. */}
-        <SwiperSlide>
-          <img src={ADO_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/ADO')}/>
-        </SwiperSlide>
-
-        {/* Poca Magia F. C. */}
-        <SwiperSlide>
-          <img src={PMA_logo} alt="slide_image" onClick={() => handleImageClick('/masculino/equipos/PMA')}/>
-        </SwiperSlide>
+        {equipos.map((equipo) => (
+          <SwiperSlide key={equipo.id}>
+            <img
+              src={equipo.logo}
+              alt={equipo.nombre}
+              onClick={() => handleImageClick(equipo.abreviatura)}
+            />
+          </SwiperSlide>
+        ))}
 
         <div className="slider-controler">
           <div className="swiper-button-prev slider-arrow">

@@ -43,7 +43,7 @@ const ARQ = () => {
 
   return (
     <div className="bg-[#23282D] min-h-screen flex flex-col">
-      <header className="bg-gray dark:bg-gray-950 text-white py-4 px-6 mb-8">
+      <header className="text-white py-4 px-6 mb-8">
         <h1 className="text-5xl font-bold text-center">Arquero Fantasma</h1>
         {/* <button>volver atras</button> */}
       </header>
@@ -61,7 +61,7 @@ const ARQ = () => {
             if (key.includes('_nombre')) {
               const jugadorIndex = key.split('_')[0].replace('jugador', '');
               return (
-                <div className="bg-white dark:bg-gray-950 rounded-lg shadow-md overflow-hidden">
+                <div className="bg-white rounded-lg shadow-md overflow-hidden">
                   <div className="p-4">
                     <h3 className="text-xxl text-black font-bold">{jugadores[`jugador${jugadorIndex}_nombre`]} {jugadores[`jugador${jugadorIndex}_apellido`]}</h3>
                     <p className="text-gray-500 dark:text-gray-400">{jugadores[`jugador${jugadorIndex}_carrera`]}</p>
