@@ -114,7 +114,7 @@ const FaseDeGrupos = () => {
     };
 
     fetchData();
-    const interval = setInterval(fetchData, 1000);
+    const interval = setInterval(fetchData, 10000);
 
     return () => clearInterval(interval);
   }, []);const grupoA = data.filter(item => item.Grupo === 'Grupo A');

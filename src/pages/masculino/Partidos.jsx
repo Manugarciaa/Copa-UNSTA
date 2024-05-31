@@ -48,22 +48,22 @@ const Partidos = () => {
 
   const getLogoForTeam = (teamName) => {
     switch (teamName) {
-      case 'DX1': return <img src={DX1_logo} alt="DX1" className="w-8 h-8" />;
-      case 'EXP': return <img src={EXP_logo} alt="EXP" className="w-8 h-8" />;
-      case 'HDV': return <img src={HDV_logo} alt="HDV" className="w-8 h-8" />;
-      case 'SZO': return <img src={SZO_logo} alt="SZO" className="w-8 h-8" />;
-      case 'QUE': return <img src={QUE_logo} alt="QUE" className="w-8 h-8" />;
-      case 'PER': return <img src={PER_logo} alt="PER" className="w-8 h-8" />;
-      case 'BAS': return <img src={BAS_logo} alt="BAS" className="w-8 h-8" />;
-      case 'SCH': return <img src={SCH_logo} alt="SCH" className="w-8 h-8" />;
-      case 'ARQ': return <img src={ARQ_logo} alt="ARQ" className="w-8 h-8" />;
-      case 'RAM': return <img src={RAM_logo} alt="RAM" className="w-8 h-8" />;
-      case 'PAB': return <img src={PAB_logo} alt="PAB" className="w-8 h-8" />;
-      case 'TAR': return <img src={TAR_logo} alt="TAR" className="w-8 h-8" />;
-      case 'ANT': return <img src={ANT_logo} alt="ANT" className="w-8 h-8" />;
-      case 'EVS': return <img src={EVS_logo} alt="EVS" className="w-8 h-8" />;
-      case 'ADO': return <img src={ADO_logo} alt="ADO" className="w-8 h-8" />;
-      case 'PMA': return <img src={PMA_logo} alt="PMA" className="w-8 h-8" />;
+      case 'DX1': return <img src={DX1_logo} alt="DX1" className="w-8 h-11" />;
+      case 'EXP': return <img src={EXP_logo} alt="EXP" className="w-8 h-11" />;
+      case 'HDV': return <img src={HDV_logo} alt="HDV" className="w-8 h-11" />;
+      case 'SZO': return <img src={SZO_logo} alt="SZO" className="w-8 h-11" />;
+      case 'QUE': return <img src={QUE_logo} alt="QUE" className="w-8 h-11" />;
+      case 'PER': return <img src={PER_logo} alt="PER" className="w-8 h-11" />;
+      case 'BAS': return <img src={BAS_logo} alt="BAS" className="w-8 h-11" />;
+      case 'SCH': return <img src={SCH_logo} alt="SCH" className="w-8 h-11" />;
+      case 'ARQ': return <img src={ARQ_logo} alt="ARQ" className="w-8 h-11" />;
+      case 'RAM': return <img src={RAM_logo} alt="RAM" className="w-8 h-11" />;
+      case 'PAB': return <img src={PAB_logo} alt="PAB" className="w-8 h-11" />;
+      case 'TAR': return <img src={TAR_logo} alt="TAR" className="w-8 h-11" />;
+      case 'ANT': return <img src={ANT_logo} alt="ANT" className="w-8 h-11" />;
+      case 'EVS': return <img src={EVS_logo} alt="EVS" className="w-8 h-11" />;
+      case 'ADO': return <img src={ADO_logo} alt="ADO" className="w-8 h-11" />;
+      case 'PMA': return <img src={PMA_logo} alt="PMA" className="w-8 h-11" />;
       default: return null;
     }
   };
@@ -77,14 +77,14 @@ const Partidos = () => {
         <div key={index} className="flex items-center justify-between w-full max-w-md px-6 py-4 mb-6 bg-white rounded-lg shadow-md">
           <div className="flex items-center">
             {getLogoForTeam(match.equipo_1)}
-            <span className="text-xl font-bold ml-2">{match.equipo_1}</span>
+            <span className="text-2xl font-bold ml-2">{match.equipo_1}</span>
           </div>
           <div className="flex flex-col items-center">
-            {match.result && <span className="text-2xl font-bold">{match.result}</span>}
-            {match.partido && <span className="text-lg font-bold text-gray-500">{match.partido}</span>}
+            {match.result && <span className="text-2xl font-bold">{match.result}</span>} 
+            {match.partido && <span className="text-xl font-bold text-gray-500">{match.partido}</span>} 
           </div>
           <div className="flex items-center">
-            <span className="text-xl font-bold mr-2">{match.equipo_2}</span>
+            <span className="text-2xl font-bold mr-2">{match.equipo_2}</span> 
             {getLogoForTeam(match.equipo_2)}
           </div>
         </div>
