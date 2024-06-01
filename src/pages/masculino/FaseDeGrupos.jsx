@@ -18,6 +18,30 @@ import EVS_logo from '../../assets/images/EVS_logo.png';
 import ADO_logo from '../../assets/images/ADO_logo.png';
 import PMA_logo from '../../assets/images/PMA_logo.png';
 
+const logos = {
+  TBD: TBD_logo,
+  SCH: SCH_logo,
+  PAB: PAB_logo,
+  DX1: DX1_logo,
+  QUE: QUE_logo,
+  SZO: SZO_logo,
+  ANT: ANT_logo,
+  EXP: EXP_logo,
+  TAR: TAR_logo,
+  GHO: GHO_logo,
+  BAS: BAS_logo,
+  ARQ: ARQ_logo,
+  HDV: HDV_logo,
+  RAM: RAM_logo,
+  EVS: EVS_logo,
+  ADO: ADO_logo,
+  PMA: PMA_logo,
+};
+
+const getLogo = (id) => {
+  return logos[id] || null;
+};
+
 const GroupTable = ({ groupName, teams }) => {
   const sortedTeams = teams.sort((a, b) => {
     if (b.points !== a.points) {
@@ -137,19 +161,10 @@ const FaseDeGrupos = () => {
   const grupoA = data.filter(item => item.Grupo === 'Grupo A');
   const grupoB = data.filter(item => item.Grupo === 'Grupo B');
   
-  function getLogo(id) {
-    try {
-      return eval(`${id}_logo`);
-    } catch (e) {
-      console.warn(`Logo para ${id} no encontrado`);
-      return null;
-    }
-  }
-
   const groups = [
     {
       groupName: 'Grupo A',
-      teams: grupoA.map((item, index) => ({
+      teams: grupoA.map((item) => ({
         name: item.Equipo,
         points: item.Pts,
         played: item.PJ,
@@ -164,7 +179,7 @@ const FaseDeGrupos = () => {
     },
     {
       groupName: 'Grupo B',
-      teams: grupoB.map((item, index) => ({
+      teams: grupoB.map((item) => ({
         name: item.Equipo,
         points: item.Pts,
         played: item.PJ,
