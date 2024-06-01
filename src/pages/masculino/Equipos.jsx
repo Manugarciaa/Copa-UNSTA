@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import { useNavigate } from 'react-router-dom';
 import SCH_logo from '../../assets/images/SCH_logo.png';
 import PAB_logo from '../../assets/images/PAB_logo.png';
 import DX1_logo from '../../assets/images/DX1_logo.png';
@@ -21,7 +22,6 @@ import RAM_logo from '../../assets/images/RAM_logo.png';
 import EVS_logo from '../../assets/images/EVS_logo.png';
 import ADO_logo from '../../assets/images/ADO_logo.png';
 import PMA_logo from '../../assets/images/PMA_logo.png';
-import { useNavigate } from 'react-router-dom';
 
 const equipos = [
   { id: 1, nombre: 'Schalke 23', logo: SCH_logo, abreviatura: 'SCH' },
@@ -44,14 +44,32 @@ const equipos = [
 
 function Equipos() {
   const navigate = useNavigate();
+  const [currentEquipo, setCurrentEquipo] = useState(null);
+
+  const handleSlideChange = (swiper) => {
+    const activeIndex = (swiper.realIndex) % equipos.length;
+    setCurrentEquipo(equipos[activeIndex].nombre);
+  };
 
   const handleImageClick = (abreviatura) => {
     navigate(`/masculino/equipos/${abreviatura}`);
   };
 
   return (
-    <div className="container">
-      <h1 className="heading text-5xl font-bold text-white">Equipos</h1>
+    <div>
+      <h1 className="w-full font-poppins font-semibold text-[32px] text-white leading-[35px] xl:text-[50px] xl:leading-[75px] mb-2 text-center">
+        <span className="text-gradient">Equipos</span>
+      </h1>
+      <div
+        className="current-team text-5xl font-bold text-white mt-2 text-center transition-all ease-in-out"
+        style={{
+          opacity: currentEquipo ? 1 : 0,
+          visibility: currentEquipo ? 'visible' : 'hidden',
+          textShadow: currentEquipo ? '0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.3)' : 'none'
+        }}
+      >
+        {currentEquipo}
+      </div>
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -72,6 +90,11 @@ function Equipos() {
         }}
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="swiper_container"
+        onSlideChange={handleSlideChange}
+        onInit={(swiper) => {
+          // Inicializar con el primer equipo
+          setCurrentEquipo(equipos[swiper.realIndex % equipos.length].nombre);
+        }}
       >
         {equipos.map((equipo) => (
           <SwiperSlide key={equipo.id}>
@@ -82,7 +105,6 @@ function Equipos() {
             />
           </SwiperSlide>
         ))}
-
         <div className="slider-controler">
           <div className="swiper-button-prev slider-arrow">
             <ion-icon name="arrow-back-outline"></ion-icon>
