@@ -129,7 +129,7 @@ const FaseDeGrupos = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/datoFaseDeGrupos.csv');
+        const response = await fetch('/fase_grupos.csv');
         if (!response.ok) {
           throw new Error('No se pudo cargar el archivo CSV');
         }
