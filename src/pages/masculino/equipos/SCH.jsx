@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import SCH_logo from '../../../assets/images/SCH_logo.png';
+import SCH_logo from '../../../assets/images/SCH_logo.webp';
 
 const SCH = () => {
   const [data, setData] = useState([]);

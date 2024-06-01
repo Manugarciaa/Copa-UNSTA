@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import PMA_logo from '../../../assets/images/PMA_logo.png';
+import PMA_logo from '../../../assets/images/PMA_logo.webp';
 
 const PMA = () => {
   const [data, setData] = useState([]);

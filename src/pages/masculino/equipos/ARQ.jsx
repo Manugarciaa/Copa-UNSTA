@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import ARQ_logo from '../../../assets/images/ARQ_logo.png';
+import ARQ_logo from '../../../assets/images/ARQ_logo.webp';
 
 const ARQ = () => {
   const [data, setData] = useState([]);

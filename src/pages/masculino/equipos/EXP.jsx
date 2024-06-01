@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import EXP_logo from '../../../assets/images/EXP_logo.png';
+import EXP_logo from '../../../assets/images/EXP_logo.webp';
 
 const EXP = () => {
   const [data, setData] = useState([]);

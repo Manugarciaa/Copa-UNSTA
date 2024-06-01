@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import TBD_logo from '../../assets/images/TBD_logo.png';
+import TBD_logo from '../../assets/images/TBD_logo.webp';
 
 const CuadroContainer = styled.div`
   display: grid;

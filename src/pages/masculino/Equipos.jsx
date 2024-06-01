@@ -5,23 +5,24 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+
+import SCH_logo from '../../assets/images/SCH_logo.webp';
+import PAB_logo from '../../assets/images/PAB_logo.webp';
+import DX1_logo from '../../assets/images/DX1_logo.webp';
+import QUE_logo from '../../assets/images/QUE_logo.webp';
+import SZO_logo from '../../assets/images/SZO_logo.webp';
+import ANT_logo from '../../assets/images/ANT_logo.webp';
+import EXP_logo from '../../assets/images/EXP_logo.webp';
+import TAR_logo from '../../assets/images/TAR_logo.webp';
+import GHO_logo from '../../assets/images/GHO_logo.webp';
+import BAS_logo from '../../assets/images/BAS_logo.webp';
+import ARQ_logo from '../../assets/images/ARQ_logo.webp';
+import HDV_logo from '../../assets/images/HDV_logo.webp';
+import RAM_logo from '../../assets/images/RAM_logo.webp';
+import EVS_logo from '../../assets/images/EVS_logo.webp';
+import ADO_logo from '../../assets/images/ADO_logo.webp';
+import PMA_logo from '../../assets/images/PMA_logo.webp';
 import { useNavigate } from 'react-router-dom';
-import SCH_logo from '../../assets/images/SCH_logo.png';
-import PAB_logo from '../../assets/images/PAB_logo.png';
-import DX1_logo from '../../assets/images/DX1_logo.png';
-import QUE_logo from '../../assets/images/QUE_logo.png';
-import SZO_logo from '../../assets/images/SZO_logo.png';
-import ANT_logo from '../../assets/images/ANT_logo.png';
-import EXP_logo from '../../assets/images/EXP_logo.png';
-import TAR_logo from '../../assets/images/TAR_logo.png';
-import GHO_logo from '../../assets/images/GHO_logo.png';
-import BAS_logo from '../../assets/images/BAS_logo.png';
-import ARQ_logo from '../../assets/images/ARQ_logo.png';
-import HDV_logo from '../../assets/images/HDV_logo.png';
-import RAM_logo from '../../assets/images/RAM_logo.png';
-import EVS_logo from '../../assets/images/EVS_logo.png';
-import ADO_logo from '../../assets/images/ADO_logo.png';
-import PMA_logo from '../../assets/images/PMA_logo.png';
 
 const equipos = [
   { id: 1, nombre: 'Schalke 23', logo: SCH_logo, abreviatura: 'SCH' },
