@@ -27,9 +27,10 @@ const PartidoCard = styled.div`
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   position: relative;
-  margin: 1rem 0;
+  margin: 0.5rem 1rem 0.5rem 0rem;
   background-color: #d5d5d5;
-  width: 480px;
+  width: 100%;
+  min-width: 300px;
   max-width: 90vw;
 
   @media (min-width: 1200px) {  
@@ -79,17 +80,17 @@ const Etapa = styled.div`
   transform: translateX(-50%);
   ${props => {
     if (props.descripcion.includes('Grupo A')) {
-      return 'color: #008000;'
+      return 'color: #008000; font-weight: bold;';
     } else if (props.descripcion.includes('Oro')) {
       return 'color: #D4AC0D; font-weight: bold;';
     } else if (props.descripcion.includes('Plata')) {
-      return 'color: #707B7C; font-weight: bold;';
+      return 'color: #515A5A; font-weight: bold;';
     } else if (props.descripcion.includes('Bronce')) {
       return 'color: #BA4A00; font-weight: bold;';
     } else if (props.descripcion.includes('Leche')) {
-      return 'color: #566573; font-weight: bold;';
+      return 'color: #888888; font-weight: bold;';
     } else {
-      return 'color: #ff0000;';
+      return 'color: #ff0000; font-weight: bold;';
     }
   }}
 `;
@@ -150,20 +151,22 @@ const Partido = ({ descripcion, equipo1, equipo2, fecha, hora, resultado, estado
 };
 
 const PartidoGroup = ({ title, matches }) => (
-  <div className="flex flex-col items-center w-full">
-    <h2 className="text-4xl font-semibold text-white mb-4">{title}</h2>
-    {matches.map((match, index) => (
-      <Partido
-        key={index}
-        descripcion={match.Descripcion}
-        equipo1={match.Equipo1}
-        equipo2={match.Equipo2}
-        fecha={match.Fecha}
-        hora={match.Hora}
-        resultado={match.Resultado}
-        estado={match.Estado}
-      />
-    ))}
+  <div className="flex flex-col items-center text-white">
+    <h2 className="text-4xl xl:text-5xl font-semibold text-white mb-4" >{title}</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {matches.map((match, index) => (
+        <Partido
+          key={index}
+          descripcion={match.Descripcion}
+          equipo1={match.Equipo1}
+          equipo2={match.Equipo2}
+          fecha={match.Fecha}
+          hora={match.Hora}
+          resultado={match.Resultado}
+          estado={match.Estado}
+        />
+      ))}
+    </div>
   </div>
 );
 
