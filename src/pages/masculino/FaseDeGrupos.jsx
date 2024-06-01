@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import Papa from 'papaparse';
+import TBD_logo from '../../assets/images/TBD_logo.png';
 import SCH_logo from '../../assets/images/SCH_logo.png';
 import PAB_logo from '../../assets/images/PAB_logo.png';
 import DX1_logo from '../../assets/images/DX1_logo.png';
@@ -98,26 +99,42 @@ const GroupTable = ({ groupName, teams }) => {
 
 const FaseDeGrupos = () => {
   const [data, setData] = useState([]);
+  const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://sheet.best/api/sheets/8906a66e-68bd-4121-8423-55fa423541c2');
-        setData(response.data);
-        console.log(response.data);
+        const response = await fetch('/datoFaseDeGrupos.csv');
+        if (!response.ok) {
+          throw new Error('No se pudo cargar el archivo CSV');
+        }
+        const csvText = await response.text();
+        Papa.parse(csvText, {
+          header: true,
+          dynamicTyping: true,
+          skipEmptyLines: true,
+          complete: (results) => {
+            setData(results.data);
+            setIsLoading(false);
+          },
+          error: (error) => {
+            console.error('Error al parsear el CSV:', error);
+            setError('Error al parsear el archivo CSV');
+            setIsLoading(false);
+          }
+        });
       } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
+        console.error('Error al cargar el archivo CSV:', error);
+        setError('Error al cargar el archivo CSV');
         setIsLoading(false);
       }
     };
 
     fetchData();
-    const interval = setInterval(fetchData, 10000);
+  }, []);
 
-    return () => clearInterval(interval);
-  }, []);const grupoA = data.filter(item => item.Grupo === 'Grupo A');
+  const grupoA = data.filter(item => item.Grupo === 'Grupo A');
   const grupoB = data.filter(item => item.Grupo === 'Grupo B');
   
   function getLogo(id) {
