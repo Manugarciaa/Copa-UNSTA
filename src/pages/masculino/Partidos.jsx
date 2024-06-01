@@ -21,7 +21,7 @@ import PMA_logo from '../../assets/images/PMA_logo.png';
 
 const PartidoCard = styled.div`
   display: flex;
-  justify-content: space-between; // Ensure even spacing between children
+  justify-content: space-between;
   align-items: center;
   padding: 2rem;
   border-radius: 10px;
@@ -29,34 +29,69 @@ const PartidoCard = styled.div`
   position: relative;
   margin: 1rem 0;
   background-color: #d5d5d5;
+  width: 480px;
+  max-width: 90vw;
+
+  @media (min-width: 1200px) {  
+    width: 400px; 
+  }
 
   .equipo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 2rem; // Add margin to create more space
+    width: 100px;
+    margin: 0;
 
     img {
-      max-width: 60px;
-      max-height: 60px;
+      max-width: 70px;
+      max-height: 75px;
       margin-bottom: 1rem;
+    }
+
+    span {
+      color: black;
+      text-align: center;
+      font-weight: 500;
     }
   }
 
   .resultado {
-    font-weight: bold;
     font-size: 2rem;
-    margin: 0 4rem; // Increase margin for more spacing
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.2;
+    min-height: 80px;
+    color: black;
+    font-weight: 500; 
   }
 `;
 
 const Etapa = styled.div`
-  color: #666;
   font-size: 1.2rem;
   position: absolute;
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
+  ${props => {
+    if (props.descripcion.includes('Grupo A')) {
+      return 'color: #008000;'
+    } else if (props.descripcion.includes('Oro')) {
+      return 'color: #D4AC0D; font-weight: bold;';
+    } else if (props.descripcion.includes('Plata')) {
+      return 'color: #707B7C; font-weight: bold;';
+    } else if (props.descripcion.includes('Bronce')) {
+      return 'color: #BA4A00; font-weight: bold;';
+    } else if (props.descripcion.includes('Leche')) {
+      return 'color: #566573; font-weight: bold;';
+    } else {
+      return 'color: #ff0000;';
+    }
+  }}
 `;
 
 const getLogoForTeam = (teamName) => {
@@ -81,27 +116,56 @@ const getLogoForTeam = (teamName) => {
   }
 };
 
-const Partido = ({ descripcion, equipo1, equipo2, fecha, resultado, estado }) => {
+const Partido = ({ descripcion, equipo1, equipo2, fecha, hora, resultado, estado }) => {
   const logo1 = getLogoForTeam(equipo1);
   const logo2 = getLogoForTeam(equipo2);
 
+  const displayResultOrDateTime = () => {
+    if (resultado !== null && resultado !== undefined && resultado !== '') {
+      return resultado;
+    } else {
+      const dateTime = fecha && hora ? `${fecha}\n${hora}` : (fecha || hora || 'Fecha y hora por definir');
+      return dateTime.split('\n').map((line, i) => (
+        <span key={i} className="date-time">{line}<br /></span>
+      ));
+    }
+  };
+
   return (
     <PartidoCard>
-      <Etapa>{descripcion || 'TBD'}</Etapa>
+      <Etapa descripcion={descripcion || 'TBD'}>{descripcion || 'TBD'}</Etapa>
       <div className="equipo">
         <img src={logo1} alt={equipo1 || '???'} />
-        <span>{equipo1 || '???'}</span>
+        <span><strong style={{ fontSize: '2rem' }}>{equipo1 || '???'}</strong></span>
       </div>
       <div className="resultado">
-        {estado === 'Terminado' ? resultado || 'vs' : fecha || 'Fecha por definir'}
+        {displayResultOrDateTime()}
       </div>
       <div className="equipo">
         <img src={logo2} alt={equipo2 || '???'} />
-        <span>{equipo2 || '???'}</span>
+        <span><strong style={{ fontSize: '2rem' }}>{equipo2 || '???'}</strong></span>
       </div>
     </PartidoCard>
   );
 };
+
+const PartidoGroup = ({ title, matches }) => (
+  <div className="flex flex-col items-center w-full">
+    <h2 className="text-4xl font-semibold text-white mb-4">{title}</h2>
+    {matches.map((match, index) => (
+      <Partido
+        key={index}
+        descripcion={match.Descripcion}
+        equipo1={match.Equipo1}
+        equipo2={match.Equipo2}
+        fecha={match.Fecha}
+        hora={match.Hora}
+        resultado={match.Resultado}
+        estado={match.Estado}
+      />
+    ))}
+  </div>
+);
 
 const Partidos = () => {
   const [data, setData] = useState([]);
@@ -140,20 +204,35 @@ const Partidos = () => {
     fetchData();
   }, []);
 
+  if (isLoading) return null;
+  if (error) return <p>Error: {error}</p>;
+
+  const groupedMatches = [
+    {
+      title: "Jornada 1 - Fase de grupos",
+      matches: data.slice(0, 12)
+    },
+    {
+      title: "Jornada 2 - Fase de grupos",
+      matches: data.slice(12, 24)
+    },
+    {
+      title: "Jornada 3 - Eliminatorias",
+      matches: data.slice(24)
+    }
+  ];
+
   return (
     <div className="flex flex-col items-center text-white">
       <h1 className="flex-1 font-poppins font-semibold text-[32px] text-white leading-[35px] xl:text-[50px] xl:leading-[75px] mb-5">
         <span className="text-gradient">Partidos</span>
       </h1>
-      {data.map((match, index) => (
-        <Partido
+
+      {groupedMatches.map((group, index) => (
+        <PartidoGroup
           key={index}
-          descripcion={match.Descripcion}
-          equipo1={match.Equipo1}
-          equipo2={match.Equipo2}
-          fecha={match.Fecha}
-          resultado={match.Resultado}
-          estado={match.Estado}
+          title={group.title}
+          matches={group.matches}
         />
       ))}
     </div>
