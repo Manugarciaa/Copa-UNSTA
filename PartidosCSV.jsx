@@ -25,6 +25,7 @@ const LeerPartidosCSV = () => {
               'Equipo1',
               'Equipo2',
               'Fecha',
+              'Hora',
               'Resultado',
               'Estado'
             ];
@@ -59,7 +60,7 @@ const LeerPartidosCSV = () => {
   return (
     <div>
       {error && <div style={{ color: 'red' }}>{error}</div>}
-      {filteredData.length > 0 ? (
+      {filteredData.length > 0 && (
         <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
           <thead className="bg-gray-800 text-white">
             <tr>
@@ -68,6 +69,7 @@ const LeerPartidosCSV = () => {
               <th className="p-3 text-left">Equipo 1</th>
               <th className="p-3 text-left">Equipo 2</th>
               <th className="p-3 text-left">Fecha</th>
+              <th className="p-3 text-left">Hora</th>
               <th className="p-3 text-left">Resultado</th>
               <th className="p-3 text-left">Estado</th>
             </tr>
@@ -80,23 +82,13 @@ const LeerPartidosCSV = () => {
                 <td className="p-3">{row.Equipo1 || 'N/A'}</td>
                 <td className="p-3">{row.Equipo2 || 'N/A'}</td>
                 <td className="p-3">{row.Fecha || 'N/A'}</td>
+                <td className="p-3">{row.Hora || 'N/A'}</td>
                 <td className="p-3">{row.Resultado || 'N/A'}</td>
-                <td className="p-3">
-                  <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                    row.Estado === 'Completado' ? 'bg-green-200 text-green-800' :
-                    row.Estado === 'Pendiente' ? 'bg-yellow-200 text-yellow-800' :
-                    row.Estado === 'Cancelado' ? 'bg-red-200 text-red-800' :
-                    'bg-gray-200 text-gray-800'
-                  }`}>
-                    {row.Estado || 'N/A'}
-                  </span>
-                </td>
+                <td className="p-3">{row.Estado || 'N/A'}</td>
               </tr>
             ))}
           </tbody>
         </table>
-      ) : (
-        <p>Cargando datos...</p>
       )}
     </div>
   );
