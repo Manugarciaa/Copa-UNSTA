@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import Papa from 'papaparse';
+import TBD_logo from '../../assets/images/TBD_logo.png';
 import SCH_logo from '../../assets/images/SCH_logo.png';
 import PAB_logo from '../../assets/images/PAB_logo.png';
 import DX1_logo from '../../assets/images/DX1_logo.png';
@@ -16,6 +17,30 @@ import RAM_logo from '../../assets/images/RAM_logo.png';
 import EVS_logo from '../../assets/images/EVS_logo.png';
 import ADO_logo from '../../assets/images/ADO_logo.png';
 import PMA_logo from '../../assets/images/PMA_logo.png';
+
+const logos = {
+  TBD: TBD_logo,
+  SCH: SCH_logo,
+  PAB: PAB_logo,
+  DX1: DX1_logo,
+  QUE: QUE_logo,
+  SZO: SZO_logo,
+  ANT: ANT_logo,
+  EXP: EXP_logo,
+  TAR: TAR_logo,
+  GHO: GHO_logo,
+  BAS: BAS_logo,
+  ARQ: ARQ_logo,
+  HDV: HDV_logo,
+  RAM: RAM_logo,
+  EVS: EVS_logo,
+  ADO: ADO_logo,
+  PMA: PMA_logo,
+};
+
+const getLogo = (id) => {
+  return logos[id] || null;
+};
 
 const GroupTable = ({ groupName, teams }) => {
   const sortedTeams = teams.sort((a, b) => {
@@ -98,41 +123,48 @@ const GroupTable = ({ groupName, teams }) => {
 
 const FaseDeGrupos = () => {
   const [data, setData] = useState([]);
+  const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://sheet.best/api/sheets/8906a66e-68bd-4121-8423-55fa423541c2');
-        setData(response.data);
-        console.log(response.data);
+        const response = await fetch('/fase_grupos.csv');
+        if (!response.ok) {
+          throw new Error('No se pudo cargar el archivo CSV');
+        }
+        const csvText = await response.text();
+        Papa.parse(csvText, {
+          header: true,
+          dynamicTyping: true,
+          skipEmptyLines: true,
+          complete: (results) => {
+            setData(results.data);
+            setIsLoading(false);
+          },
+          error: (error) => {
+            console.error('Error al parsear el CSV:', error);
+            setError('Error al parsear el archivo CSV');
+            setIsLoading(false);
+          }
+        });
       } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
+        console.error('Error al cargar el archivo CSV:', error);
+        setError('Error al cargar el archivo CSV');
         setIsLoading(false);
       }
     };
 
     fetchData();
-    const interval = setInterval(fetchData, 10000);
+  }, []);
 
-    return () => clearInterval(interval);
-  }, []);const grupoA = data.filter(item => item.Grupo === 'Grupo A');
+  const grupoA = data.filter(item => item.Grupo === 'Grupo A');
   const grupoB = data.filter(item => item.Grupo === 'Grupo B');
   
-  function getLogo(id) {
-    try {
-      return eval(`${id}_logo`);
-    } catch (e) {
-      console.warn(`Logo para ${id} no encontrado`);
-      return null;
-    }
-  }
-
   const groups = [
     {
       groupName: 'Grupo A',
-      teams: grupoA.map((item, index) => ({
+      teams: grupoA.map((item) => ({
         name: item.Equipo,
         points: item.Pts,
         played: item.PJ,
@@ -147,7 +179,7 @@ const FaseDeGrupos = () => {
     },
     {
       groupName: 'Grupo B',
-      teams: grupoB.map((item, index) => ({
+      teams: grupoB.map((item) => ({
         name: item.Equipo,
         points: item.Pts,
         played: item.PJ,

@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import Papa from 'papaparse';
+import styled from 'styled-components';
+import TBD_logo from '../../assets/images/TBD_logo.png';
 import SCH_logo from '../../assets/images/SCH_logo.png';
 import PAB_logo from '../../assets/images/PAB_logo.png';
 import DX1_logo from '../../assets/images/DX1_logo.png';
@@ -17,24 +19,184 @@ import EVS_logo from '../../assets/images/EVS_logo.png';
 import ADO_logo from '../../assets/images/ADO_logo.png';
 import PMA_logo from '../../assets/images/PMA_logo.png';
 
+const PartidoCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  position: relative;
+  margin: 1rem 0;
+  background-color: #d5d5d5;
+  width: 480px;
+  max-width: 90vw;
+
+  @media (min-width: 1200px) {  
+    width: 400px; 
+  }
+
+  .equipo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    margin: 0;
+
+    img {
+      max-width: 70px;
+      max-height: 75px;
+      margin-bottom: 1rem;
+    }
+
+    span {
+      color: black;
+      text-align: center;
+      font-weight: 500;
+    }
+  }
+
+  .resultado {
+    font-size: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.2;
+    min-height: 80px;
+    color: black;
+    font-weight: 500; 
+  }
+`;
+
+const Etapa = styled.div`
+  font-size: 1.2rem;
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  ${props => {
+    if (props.descripcion.includes('Grupo A')) {
+      return 'color: #008000;'
+    } else if (props.descripcion.includes('Oro')) {
+      return 'color: #D4AC0D; font-weight: bold;';
+    } else if (props.descripcion.includes('Plata')) {
+      return 'color: #707B7C; font-weight: bold;';
+    } else if (props.descripcion.includes('Bronce')) {
+      return 'color: #BA4A00; font-weight: bold;';
+    } else if (props.descripcion.includes('Leche')) {
+      return 'color: #566573; font-weight: bold;';
+    } else {
+      return 'color: #ff0000;';
+    }
+  }}
+`;
+
+const getLogoForTeam = (teamName) => {
+  switch (teamName) {
+    case 'SCH': return SCH_logo;
+    case 'PAB': return PAB_logo;
+    case 'DX1': return DX1_logo;
+    case 'QUE': return QUE_logo;
+    case 'SZO': return SZO_logo;
+    case 'ANT': return ANT_logo;
+    case 'EXP': return EXP_logo;
+    case 'TAR': return TAR_logo;
+    case 'GHO': return GHO_logo;
+    case 'BAS': return BAS_logo;
+    case 'ARQ': return ARQ_logo;
+    case 'HDV': return HDV_logo;
+    case 'RAM': return RAM_logo;
+    case 'EVS': return EVS_logo;
+    case 'ADO': return ADO_logo;
+    case 'PMA': return PMA_logo;
+    default: return TBD_logo;
+  }
+};
+
+const Partido = ({ descripcion, equipo1, equipo2, fecha, hora, resultado, estado }) => {
+  const logo1 = getLogoForTeam(equipo1);
+  const logo2 = getLogoForTeam(equipo2);
+
+  const displayResultOrDateTime = () => {
+    if (resultado !== null && resultado !== undefined && resultado !== '') {
+      return resultado;
+    } else {
+      const dateTime = fecha && hora ? `${fecha}\n${hora}` : (fecha || hora || 'Fecha y hora por definir');
+      return dateTime.split('\n').map((line, i) => (
+        <span key={i} className="date-time">{line}<br /></span>
+      ));
+    }
+  };
+
+  return (
+    <PartidoCard>
+      <Etapa descripcion={descripcion || 'TBD'}>{descripcion || 'TBD'}</Etapa>
+      <div className="equipo">
+        <img src={logo1} alt={equipo1 || '???'} />
+        <span><strong style={{ fontSize: '2rem' }}>{equipo1 || '???'}</strong></span>
+      </div>
+      <div className="resultado">
+        {displayResultOrDateTime()}
+      </div>
+      <div className="equipo">
+        <img src={logo2} alt={equipo2 || '???'} />
+        <span><strong style={{ fontSize: '2rem' }}>{equipo2 || '???'}</strong></span>
+      </div>
+    </PartidoCard>
+  );
+};
+
+const PartidoGroup = ({ title, matches }) => (
+  <div className="flex flex-col items-center w-full">
+    <h2 className="text-4xl font-semibold text-white mb-4">{title}</h2>
+    {matches.map((match, index) => (
+      <Partido
+        key={index}
+        descripcion={match.Descripcion}
+        equipo1={match.Equipo1}
+        equipo2={match.Equipo2}
+        fecha={match.Fecha}
+        hora={match.Hora}
+        resultado={match.Resultado}
+        estado={match.Estado}
+      />
+    ))}
+  </div>
+);
+
 const Partidos = () => {
-  const [matches, setMatches] = useState([]);
+  const [data, setData] = useState([]);
+  const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://sheet.best/api/sheets/b71e9de1-b594-42c9-934b-9b003de90524');
-        const adaptedMatches = response.data.map((item) => ({
-          equipo_1: item['Equipo 1'],
-          equipo_2: item['Equipo 2'],
-          partido: item['Dato'],
-        }));
-        setMatches(adaptedMatches);
-        console.log(adaptedMatches);
+        const response = await fetch('/partidos.csv');
+        if (!response.ok) {
+          throw new Error('No se pudo cargar el archivo CSV');
+        }
+        const csvText = await response.text();
+        Papa.parse(csvText, {
+          header: true,
+          dynamicTyping: true,
+          skipEmptyLines: true,
+          complete: (results) => {
+            setData(results.data);
+            setIsLoading(false);
+          },
+          error: (error) => {
+            console.error('Error al parsear el CSV:', error);
+            setError('Error al parsear el archivo CSV');
+            setIsLoading(false);
+          }
+        });
       } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
+        console.error('Error al cargar el archivo CSV:', error);
+        setError('Error al cargar el archivo CSV');
         setIsLoading(false);
       }
     };
@@ -42,52 +204,36 @@ const Partidos = () => {
     fetchData();
   }, []);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  if (isLoading) return null;
+  if (error) return <p>Error: {error}</p>;
 
-  const getLogoForTeam = (teamName) => {
-    switch (teamName) {
-      case 'SCH': return <img src={SCH_logo} alt="SCH" className="w-8 h-11" />;
-      case 'PAB': return <img src={PAB_logo} alt="PAB" className="w-8 h-11" />;
-      case 'DX1': return <img src={DX1_logo} alt="DX1" className="w-8 h-11" />;
-      case 'QUE': return <img src={QUE_logo} alt="QUE" className="w-8 h-11" />;
-      case 'SZO': return <img src={SZO_logo} alt="SZO" className="w-8 h-11" />;
-      case 'ANT': return <img src={ANT_logo} alt="ANT" className="w-8 h-11" />;
-      case 'EXP': return <img src={EXP_logo} alt="EXP" className="w-8 h-11" />;
-      case 'TAR': return <img src={TAR_logo} alt="TAR" className="w-8 h-11" />;
-      case 'GHO': return <img src={GHO_logo} alt="GHO" className="w-8 h-11" />;
-      case 'BAS': return <img src={BAS_logo} alt="BAS" className="w-8 h-11" />;
-      case 'ARQ': return <img src={ARQ_logo} alt="ARQ" className="w-8 h-11" />;
-      case 'HDV': return <img src={HDV_logo} alt="HDV" className="w-8 h-11" />;
-      case 'RAM': return <img src={RAM_logo} alt="RAM" className="w-8 h-11" />;
-      case 'EVS': return <img src={EVS_logo} alt="EVS" className="w-8 h-11" />;
-      case 'ADO': return <img src={ADO_logo} alt="ADO" className="w-8 h-11" />;
-      case 'PMA': return <img src={PMA_logo} alt="PMA" className="w-8 h-11" />;
-      default: return null;
+  const groupedMatches = [
+    {
+      title: "Jornada 1 - Fase de grupos",
+      matches: data.slice(0, 12)
+    },
+    {
+      title: "Jornada 2 - Fase de grupos",
+      matches: data.slice(12, 24)
+    },
+    {
+      title: "Jornada 3 - Eliminatorias",
+      matches: data.slice(24)
     }
-  };
+  ];
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center text-white">
       <h1 className="flex-1 font-poppins font-semibold text-[32px] text-white leading-[35px] xl:text-[50px] xl:leading-[75px] mb-5">
         <span className="text-gradient">Partidos</span>
       </h1>
-      {matches.map((match, index) => (
-        <div key={index} className="flex items-center justify-between w-full max-w-md px-6 py-4 mb-6 bg-white rounded-lg shadow-md">
-          <div className="flex items-center">
-            {getLogoForTeam(match.equipo_1)}
-            <span className="text-2xl font-bold ml-2">{match.equipo_1}</span>
-          </div>
-          <div className="flex flex-col items-center">
-            {match.result && <span className="text-2xl font-bold">{match.result}</span>} 
-            {match.partido && <span className="text-xl font-bold text-gray-500">{match.partido}</span>} 
-          </div>
-          <div className="flex items-center">
-            <span className="text-2xl font-bold mr-2">{match.equipo_2}</span> 
-            {getLogoForTeam(match.equipo_2)}
-          </div>
-        </div>
+
+      {groupedMatches.map((group, index) => (
+        <PartidoGroup
+          key={index}
+          title={group.title}
+          matches={group.matches}
+        />
       ))}
     </div>
   );

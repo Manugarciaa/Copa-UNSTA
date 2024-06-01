@@ -254,11 +254,11 @@ body {
 }
 
 .swiper-pagination .swiper-pagination-bullet-active:nth-child(-n+8) {
-  background: red; /* Color rojo para los primeros 8 puntos */
+  background: green; /* Color rojo para los primeros 8 puntos */
 }
 
 .swiper-pagination .swiper-pagination-bullet-active:nth-child(n+9) {
-  background: green; /* Color verde para los últimos 8 puntos */
+  background: red; /* Color verde para los últimos 8 puntos */
 }
 
 .copa-wrapper {

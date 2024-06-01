@@ -1,0 +1,37 @@
+Partido,Descripcion,Equipo1,Equipo2,Fecha,Hora,Resultado,Estado
+1,Fase de grupos - Grupo A,SCH,PAB,Lun. 3/6,10:00,,Por jugarse
+2,Fase de grupos - Grupo A,DX1,QUE,Lun. 3/6,10:00,,Por jugarse
+3,Fase de grupos - Grupo A,SZO,ANT,Lun. 3/6,11:00,,Por jugarse
+4,Fase de grupos - Grupo A,EXP,TAR,Lun. 3/6,11:00,,Por jugarse
+5,Fase de grupos - Grupo B,GHO,BAS,Lun. 3/6,12:00,,Por jugarse
+6,Fase de grupos - Grupo B,ARQ,HDV,Lun. 3/6,12:00,,Por jugarse
+7,Fase de grupos - Grupo B,RAM,EVS,Lun. 3/6,13:00,,Por jugarse
+8,Fase de grupos - Grupo B,ADO,PMA,Lun. 3/6,13:00,,Por jugarse
+9,Fase de grupos - Grupo A,SCH,DX1,Lun. 3/6,14:00,,Por jugarse
+10,Fase de grupos - Grupo A,PAB,QUE,Lun. 3/6,14:00,,Por jugarse
+11,Fase de grupos - Grupo A,SZO,EXP,Lun. 3/6,15:00,,Por jugarse
+12,Fase de grupos - Grupo A,ANT,TAR,Lun. 3/6,15:00,,Por jugarse
+13,Fase de grupos - Grupo B,GHO,HDV,Mié. 5/6,10:00,,Por jugarse
+14,Fase de grupos - Grupo B,BAS,ARQ,Mié. 5/6,10:00,,Por jugarse
+15,Fase de grupos - Grupo B,RAM,PMA,Mié. 5/6,11:00,,Por jugarse
+16,Fase de grupos - Grupo B,EVS,ADO,Mié. 5/6,11:00,,Por jugarse
+17,Fase de grupos - Grupo A,SCH,QUE,Mié. 5/6,12:00,,Por jugarse
+18,Fase de grupos - Grupo A,PAB,DX1,Mié. 5/6,12:00,,Por jugarse
+19,Fase de grupos - Grupo A,SZO,TAR,Mié. 5/6,13:00,,Por jugarse
+20,Fase de grupos - Grupo A,ANT,EXP,Mié. 5/6,13:00,,Por jugarse
+21,Fase de grupos - Grupo B,GHO,ARQ,Mié. 5/6,14:00,,Por jugarse
+22,Fase de grupos - Grupo B,BAS,HDV,Mié. 5/6,14:00,,Por jugarse
+23,Fase de grupos - Grupo B,RAM,ADO,Mié. 5/6,15:00,,Por jugarse
+24,Fase de grupos - Grupo B,EVS,PMA,Mié. 5/6,15:00,,Por jugarse
+25,Leche - Semifinal 1,7° A,8° B,Vie. 7/6,10:00,,Por jugarse
+26,Leche - Semifinal 2,8° A,7° B,Vie. 7/6,10:00,,Por jugarse
+27,Plata - Semifinal 1,3° A,4° B,Vie. 7/6,11:00,,Por jugarse
+28,Plata - Semifinal 2,4° A,3° B,Vie. 7/6,11:00,,Por jugarse
+29,Bronce - Semifinal 1,5° A,6° B,Vie. 7/6,12:00,,Por jugarse
+30,Bronce - Semifinal 2,6° A,5° B,Vie. 7/6,12:00,,Por jugarse
+31,Oro - Semifinal 1,1° A,2° B,Vie. 7/6,13:00,,Por jugarse
+32,Oro - Semifinal 2,2° A,1° B,Vie. 7/6,13:00,,Por jugarse
+33,Leche - Final,???,???,Vie. 7/6,14:00,,Por jugarse
+34,Plata - Final,???,???,Vie. 7/6,14:00,,Por jugarse
+35,Bronce - Final,???,???,Vie. 7/6,15:00,,Por jugarse
+36,Oro - Final,???,???,Vie. 7/6,15:00,,Por jugarse
