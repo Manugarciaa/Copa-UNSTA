@@ -11,7 +11,7 @@ const BAS = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/datoEquipos.csv');
+        const response = await fetch('/jugadores.csv');
         if (!response.ok) {
           throw new Error('No se pudo cargar el archivo CSV');
         }

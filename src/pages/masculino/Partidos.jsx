@@ -81,18 +81,20 @@ const getLogoForTeam = (teamName) => {
   }
 };
 
-const Partido = ({ etapa, resultado, equipo1, equipo2 }) => {
+const Partido = ({ descripcion, equipo1, equipo2, fecha, resultado, estado }) => {
   const logo1 = getLogoForTeam(equipo1);
   const logo2 = getLogoForTeam(equipo2);
 
   return (
     <PartidoCard>
-      <Etapa>{etapa || 'TBD'}</Etapa>
+      <Etapa>{descripcion || 'TBD'}</Etapa>
       <div className="equipo">
         <img src={logo1} alt={equipo1 || '???'} />
         <span>{equipo1 || '???'}</span>
       </div>
-      <div className="resultado">{resultado || 'vs'}</div>
+      <div className="resultado">
+        {estado === 'Terminado' ? resultado || 'vs' : fecha || 'Fecha por definir'}
+      </div>
       <div className="equipo">
         <img src={logo2} alt={equipo2 || '???'} />
         <span>{equipo2 || '???'}</span>
@@ -109,7 +111,7 @@ const Partidos = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/datoPartidos.csv');
+        const response = await fetch('/partidos.csv');
         if (!response.ok) {
           throw new Error('No se pudo cargar el archivo CSV');
         }
@@ -146,10 +148,12 @@ const Partidos = () => {
       {data.map((match, index) => (
         <Partido
           key={index}
-          etapa={match.Partido}
-          resultado={match.Resultado}
+          descripcion={match.Descripcion}
           equipo1={match.Equipo1}
           equipo2={match.Equipo2}
+          fecha={match.Fecha}
+          resultado={match.Resultado}
+          estado={match.Estado}
         />
       ))}
     </div>
