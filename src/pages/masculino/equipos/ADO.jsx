@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import ADO_logo from '../../../assets/images/ADO_logo.png';
+import ADO_logo from '../../../assets/images/ADO_logo.webp';
 
 const ADO = () => {
   const [data, setData] = useState([]);

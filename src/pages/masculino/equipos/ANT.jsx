@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import ANT_logo from '../../../assets/images/ANT_logo.png';
+import ANT_logo from '../../../assets/images/ANT_logo.webp';
 
 const ANT = () => {
   const [data, setData] = useState([]);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import QUE_logo from '../../../assets/images/QUE_logo.png';
+import QUE_logo from '../../../assets/images/QUE_logo.webp';
 
 const QUE = () => {
   const [data, setData] = useState([]);

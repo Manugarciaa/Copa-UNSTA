@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import TAR_logo from '../../../assets/images/TAR_logo.png';
+import TAR_logo from '../../../assets/images/TAR_logo.webp';
 
 const TAR = () => {
   const [data, setData] = useState([]);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import EVS_logo from '../../../assets/images/EVS_logo.png';
+import EVS_logo from '../../../assets/images/EVS_logo.webp';
 
 const EVS = () => {
   const [data, setData] = useState([]);

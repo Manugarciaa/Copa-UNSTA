@@ -1,20 +1,20 @@
 import React from 'react';
-import SCH_logo from '../../assets/images/SCH_logo.png';
-import PAB_logo from '../../assets/images/PAB_logo.png';
-import DX1_logo from '../../assets/images/DX1_logo.png';
-import QUE_logo from '../../assets/images/QUE_logo.png';
-import SZO_logo from '../../assets/images/SZO_logo.png';
-import ANT_logo from '../../assets/images/ANT_logo.png';
-import EXP_logo from '../../assets/images/EXP_logo.png';
-import TAR_logo from '../../assets/images/TAR_logo.png';
-import GHO_logo from '../../assets/images/GHO_logo.png';
-import BAS_logo from '../../assets/images/BAS_logo.png';
-import ARQ_logo from '../../assets/images/ARQ_logo.png';
-import HDV_logo from '../../assets/images/HDV_logo.png';
-import RAM_logo from '../../assets/images/RAM_logo.png';
-import EVS_logo from '../../assets/images/EVS_logo.png';
-import ADO_logo from '../../assets/images/ADO_logo.png';
-import PMA_logo from '../../assets/images/PMA_logo.png';
+import SCH_logo from '../../assets/images/SCH_logo.webp';
+import PAB_logo from '../../assets/images/PAB_logo.webp';
+import DX1_logo from '../../assets/images/DX1_logo.webp';
+import QUE_logo from '../../assets/images/QUE_logo.webp';
+import SZO_logo from '../../assets/images/SZO_logo.webp';
+import ANT_logo from '../../assets/images/ANT_logo.webp';
+import EXP_logo from '../../assets/images/EXP_logo.webp';
+import TAR_logo from '../../assets/images/TAR_logo.webp';
+import GHO_logo from '../../assets/images/GHO_logo.webp';
+import BAS_logo from '../../assets/images/BAS_logo.webp';
+import ARQ_logo from '../../assets/images/ARQ_logo.webp';
+import HDV_logo from '../../assets/images/HDV_logo.webp';
+import RAM_logo from '../../assets/images/RAM_logo.webp';
+import EVS_logo from '../../assets/images/EVS_logo.webp';
+import ADO_logo from '../../assets/images/ADO_logo.webp';
+import PMA_logo from '../../assets/images/PMA_logo.webp';
 
 const Estadisticas = () => {
   const equipos = [
@@ -31,26 +31,135 @@ const Estadisticas = () => {
   ];
 
   return (
-    <div className="flex flex-col bg-gray-200 rounded-lg p-4">
-      <div className="flex items-center bg-blue-500 text-white p-4 rounded-lg mb-2">
-        <div className="w-8 h-8 mr-4">
-          <img src={equipos[0].escudo} alt={equipos[0].nombre} className="w-full h-full object-contain" />
-        </div>
-        <div className="flex-1 font-bold text-2xl">{equipos[0].nombre}</div>
-        <div className="w-12 text-right font-bold text-3xl">{equipos[0].goles}</div>
-      </div>
-      {equipos.slice(1).map((equipo, index) => (
-        <div key={index} className="flex justify-between items-center mb-2">
-          <div className="flex items-center">
-            <div className="w-6 text-gray-500 mr-2">{index + 2}</div>
-            <div className="w-6 h-6 mr-2">
-              <img src={equipo.escudo} alt={equipo.nombre} className="w-full h-full object-contain" />
+
+    <div class="flex flex-col min-h-screen text-gray-50">
+      <main class="flex-1 py-8 px-6 md:px-12 lg:px-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-900 rounded-lg shadow-md p-6">
+            <h2 class="text-4xl font-bold mb-4">Top Goleadores</h2>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">
+                    1
+                  </div>
+                  <div>
+                    <p class="font-medium">Lionel Messi</p>
+                    <p class="text-gray-400">Miami</p>
+                  </div>
+                </div>
+                <p class="font-bold text-gray-300">35 Goals</p>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">
+                    2
+                  </div>
+                  <div>
+                    <p class="font-medium">Cristiano Ronaldo</p>
+                    <p class="text-gray-400">ALNASSR</p>
+                  </div>
+                </div>
+                <p class="font-bold text-gray-300">28 Goals</p>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">
+                    3
+                  </div>
+                  <div>
+                    <p class="font-medium">Robert Lewandowski</p>
+                    <p class="text-gray-400">Barcelona</p>
+                  </div>
+                </div>
+                <p class="font-bold text-gray-300">25 Goals</p>
+              </div>
             </div>
-            <div className="font-bold">{equipo.nombre}</div>
           </div>
-          <div className="w-12 text-right">{equipo.goles}</div>
+          <div class="bg-gray-900 rounded-lg shadow-md p-6">
+            <h2 class="text-4xl font-bold mb-4">Top Equipos Goleadores</h2>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">
+                    1
+                  </div>
+                  <div class="w-10 h-10 flex items-center justify-center text-gray-400 font-bold gap-x-2">
+                    <img src={ADO_logo} alt="" />
+                  </div>
+                  <p class="font-medium">Manchester City</p>
+                </div>
+                <p class="font-bold text-gray-300">85 Goals</p>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">
+                    2
+                  </div>
+                  <div class="w-10 h-10 flex items-center justify-center text-gray-400 font-bold gap-x-2">
+                    <img src={EXP_logo} alt="" />
+                  </div>
+                  <p class="font-medium">Bayern Munich</p>
+                </div>
+                <p class="font-bold text-gray-300">78 Goals</p>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">
+                    3
+                  </div>
+                  <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">
+                    <img src={ANT_logo} alt="" />
+                  </div>
+                  <p class="font-medium">Liverpool</p>
+                </div>
+                <p class="font-bold text-gray-300">72 Goals</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-900 rounded-lg shadow-md p-6">
+            <h2 class="text-4xl font-bold mb-4">Equipos menos goleados</h2>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">
+                    3
+                  </div>
+                  <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">
+                    <img src={EXP_logo} alt="" />
+                  </div>
+                  <p class="font-medium">Manchester City</p>
+                </div>
+                <p class="font-bold text-gray-300">23 Goals</p>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">
+                    3
+                  </div>
+                  <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">
+                    <img src={ARQ_logo} alt="" />
+                  </div>
+                  <p class="font-medium">Atletico Madrid</p>
+                </div>
+                <p class="font-bold text-gray-300">25 Goals</p>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">
+                    3
+                  </div>
+                  <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">
+                    <img src={EVS_logo} alt="" />
+                  </div>
+                  <p class="font-medium">Juventus</p>
+                </div>
+                <p class="font-bold text-gray-300">27 Goals</p>
+              </div>
+            </div>
+          </div>
         </div>
-      ))}
+      </main>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import HDV_logo from '../../../assets/images/HDV_logo.png';
+import HDV_logo from '../../../assets/images/HDV_logo.webp';
 
 const HDV = () => {
   const [data, setData] = useState([]);

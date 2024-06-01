@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import DX1_logo from '../../../assets/images/DX1_logo.png';
+import DX1_logo from '../../../assets/images/DX1_logo.webp';
 
 const DX1 = () => {
   const [data, setData] = useState([]);
