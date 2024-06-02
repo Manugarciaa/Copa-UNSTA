@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import HDV_logo from '../../../assets/images/HDV_logo.webp';
+import HDV_logo from '../../../assets/images/HDV_icon.webp';
 
 const HDV = () => {
   const [data, setData] = useState([]);
@@ -47,7 +47,6 @@ const HDV = () => {
 
     const datosFiltrados = filtrarPorId('HDV');
 
-    // Crear un objeto con los jugadores
     const jugadoresObj = {};
     datosFiltrados.forEach((item, index) => {
       jugadoresObj[`jugador${index + 1}_nombre`] = item.Nombre;
@@ -58,20 +57,20 @@ const HDV = () => {
     setJugadores(jugadoresObj);
   }, [data]);
 
-  if (isLoading) return <p>Cargando datos...</p>;
   if (error) return <div style={{ color: 'red' }}>{error}</div>;
 
   return (
     <div className="bg-[#23282D] min-h-screen flex flex-col">
       <header className="text-white py-4 px-6 mb-8">
         <h1 className="text-5xl font-bold text-center">Herederos de Vega</h1>
+        <h2 className="text-amber-400 text-small text-center mt-2">Campeón Copa UNSTA 2023</h2>
       </header>
       <div className="flex justify-center items-center w-full h-50">
         <img
           alt="Team Logo"
-          height={150}
+          height={200}
           src={HDV_logo}
-          width={150}
+          width={200}
         />
       </div>
       <main className="flex-1 container mx-auto py-8 px-4 md:px-6">

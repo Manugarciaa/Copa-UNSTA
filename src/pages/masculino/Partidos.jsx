@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import styled from 'styled-components';
-import TBD_logo from '../../assets/images/TBD_logo.webp';
-import SCH_logo from '../../assets/images/SCH_logo.webp';
-import PAB_logo from '../../assets/images/PAB_logo.webp';
-import DX1_logo from '../../assets/images/DX1_logo.webp';
-import QUE_logo from '../../assets/images/QUE_logo.webp';
-import SZO_logo from '../../assets/images/SZO_logo.webp';
-import ANT_logo from '../../assets/images/ANT_logo.webp';
-import EXP_logo from '../../assets/images/EXP_logo.webp';
-import TAR_logo from '../../assets/images/TAR_logo.webp';
-import GHO_logo from '../../assets/images/GHO_logo.webp';
-import BAS_logo from '../../assets/images/BAS_logo.webp';
-import ARQ_logo from '../../assets/images/ARQ_logo.webp';
-import HDV_logo from '../../assets/images/HDV_logo.webp';
-import RAM_logo from '../../assets/images/RAM_logo.webp';
-import EVS_logo from '../../assets/images/EVS_logo.webp';
-import ADO_logo from '../../assets/images/ADO_logo.webp';
-import PMA_logo from '../../assets/images/PMA_logo.webp';
+import SCH_logo from '../../assets/images/SCH_icon.webp';
+import PAB_logo from '../../assets/images/PAB_icon.webp';
+import DX1_logo from '../../assets/images/DX1_icon.webp';
+import QUE_logo from '../../assets/images/QUE_icon.webp';
+import SZO_logo from '../../assets/images/SZO_icon.webp';
+import ANT_logo from '../../assets/images/ANT_icon.webp';
+import EXP_logo from '../../assets/images/EXP_icon.webp';
+import TAR_logo from '../../assets/images/TAR_icon.webp';
+import GHO_logo from '../../assets/images/GHO_icon.webp';
+import BAS_logo from '../../assets/images/BAS_icon.webp';
+import ARQ_logo from '../../assets/images/ARQ_icon.webp';
+import HDV_logo from '../../assets/images/HDV_icon.webp';
+import RAM_logo from '../../assets/images/RAM_icon.webp';
+import EVS_logo from '../../assets/images/EVS_icon.webp';
+import ADO_logo from '../../assets/images/ADO_icon.webp';
+import PMA_logo from '../../assets/images/PMA_icon.webp';
+import TBD_logo from '../../assets/images/TBD_icon.webp';
 
 const PartidoCard = styled.div`
   display: flex;
@@ -47,7 +47,8 @@ const PartidoCard = styled.div`
     img {
       max-width: 70px;
       max-height: 75px;
-      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
     }
 
     span {
@@ -77,17 +78,18 @@ const Etapa = styled.div`
   position: absolute;
   top: 1rem;
   left: 50%;
+  text-align: center;
   transform: translateX(-50%);
   ${props => {
     if (props.descripcion.includes('Grupo A')) {
       return 'color: #008000; font-weight: bold;';
-    } else if (props.descripcion.includes('Oro')) {
+    } else if (props.descripcion.includes('oro')) {
       return 'color: #D4AC0D; font-weight: bold;';
-    } else if (props.descripcion.includes('Plata')) {
+    } else if (props.descripcion.includes('plata')) {
       return 'color: #515A5A; font-weight: bold;';
-    } else if (props.descripcion.includes('Bronce')) {
+    } else if (props.descripcion.includes('bronce')) {
       return 'color: #BA4A00; font-weight: bold;';
-    } else if (props.descripcion.includes('Leche')) {
+    } else if (props.descripcion.includes('aluminio')) {
       return 'color: #888888; font-weight: bold;';
     } else {
       return 'color: #ff0000; font-weight: bold;';
@@ -152,7 +154,7 @@ const Partido = ({ descripcion, equipo1, equipo2, fecha, hora, resultado, estado
 
 const PartidoGroup = ({ title, matches }) => (
   <div className="flex flex-col items-center text-white">
-    <h2 className="text-4xl xl:text-5xl font-semibold text-white mb-4" >{title}</h2>
+    <h2 className="text-4xl xl:text-5xl font-semibold text-white mt-12 mb-4">{title}</h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {matches.map((match, index) => (
         <Partido

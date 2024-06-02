@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import BAS_logo from '../../../assets/images/BAS_logo.webp';
+import BAS_logo from '../../../assets/images/BAS_icon.webp';
 
 const BAS = () => {
   const [data, setData] = useState([]);
@@ -47,7 +47,6 @@ const BAS = () => {
 
     const datosFiltrados = filtrarPorId('BAS');
 
-    // Crear un objeto con los jugadores
     const jugadoresObj = {};
     datosFiltrados.forEach((item, index) => {
       jugadoresObj[`jugador${index + 1}_nombre`] = item.Nombre;
@@ -58,7 +57,6 @@ const BAS = () => {
     setJugadores(jugadoresObj);
   }, [data]);
 
-  if (isLoading) return <p>Cargando datos...</p>;
   if (error) return <div style={{ color: 'red' }}>{error}</div>;
 
   return (
@@ -69,9 +67,9 @@ const BAS = () => {
       <div className="flex justify-center items-center w-full h-50">
         <img
           alt="Team Logo"
-          height={150}
+          height={200}
           src={BAS_logo}
-          width={150}
+          width={200}
         />
       </div>
       <main className="flex-1 container mx-auto py-8 px-4 md:px-6">
