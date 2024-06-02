@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import RAM_logo from '../../../assets/images/RAM_logo.png';
+import RAM_logo from '../../../assets/images/RAM_logo.webp';
 
 const RAM = () => {
   const [data, setData] = useState([]);

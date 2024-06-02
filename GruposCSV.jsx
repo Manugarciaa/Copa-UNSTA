@@ -64,7 +64,7 @@ const LeerFaseDeGruposCSV = () => {
   return (
     <div>
       {error && <div style={{ color: 'red' }}>{error}</div>}
-      {filteredData.length > 0 ? (
+      {filteredData.length > 0 && (
         <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
           <thead className="bg-gray-800 text-white">
             <tr>
@@ -101,8 +101,6 @@ const LeerFaseDeGruposCSV = () => {
             ))}
           </tbody>
         </table>
-      ) : (
-        <p>Cargando datos...</p>
       )}
     </div>
   );

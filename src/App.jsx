@@ -50,7 +50,7 @@ const App = () => {
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <BrowserRouter>
-            <Suspense fallback={<div>Cargando...</div>}>
+            <Suspense fallback={<div></div>}>
               <Routes>
                 <Route path="/" element={<> <Header /> <Home /> <Footer /> </>} />
                 <Route path="/masculino/partidos" element={<> <EncabezadoM /> <PartidosM /> </>} />

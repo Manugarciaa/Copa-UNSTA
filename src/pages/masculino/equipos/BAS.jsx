@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import BAS_logo from '../../../assets/images/BAS_logo.png';
+import BAS_logo from '../../../assets/images/BAS_logo.webp';
 
 const BAS = () => {
   const [data, setData] = useState([]);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import GHO_logo from '../../../assets/images/GHO_logo.png';
+import GHO_logo from '../../../assets/images/GHO_logo.webp';
 
 const GHO = () => {
   const [data, setData] = useState([]);

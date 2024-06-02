@@ -51,7 +51,7 @@ const LeerCSV = () => {
   return (
     <div>
       {error && <div style={{ color: 'red' }}>{error}</div>}
-      {filteredData.length > 0 ? (
+      {filteredData.length > 0 && (
         <table>
           <thead>
             <tr>
@@ -72,8 +72,6 @@ const LeerCSV = () => {
             ))}
           </tbody>
         </table>
-      ) : (
-        <p>Cargando datos...</p>
       )}
     </div>
   );

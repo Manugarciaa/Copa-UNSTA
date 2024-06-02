@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import SZO_logo from '../../../assets/images/SZO_logo.png';
+import SZO_logo from '../../../assets/images/SZO_logo.webp';
 
 const SZO = () => {
   const [data, setData] = useState([]);
