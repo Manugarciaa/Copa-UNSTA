@@ -1,0 +1,17 @@
+/* src/styles/style.module.css */
+.paddingY {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .flexStart {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
