@@ -17,30 +17,34 @@ const Home = () => {
         items-center
         justify-center
         min-h-[calc(100vh-100px)]
+        bg-gray-900
       `}
     >
       {/* Contenido Principal */}
       <div className="flex-1 xl:px-0 sm:px-16 px-6">
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 items-center md:items-start">
           <h1 className="
             font-poppins
             font-semibold
-            text-[42px]
+            text-[52px]
             text-white
-            leading-[45px]
-            sm:text-[52px]
-            sm:leading-[55px]
+            leading-[55px]
+            sm:text-[58px]
+            sm:leading-[60px]
             md:text-[62px]
             md:leading-[65px]
             xl:text-[72px]
             xl:leading-[75px]
             order-1
+            text-center md:text-left
+            tracking-tight
           ">
             Bienvenidos a{' '}
             <span className="
               bg-gradient-to-r from-[#ff9966] via-[#ff7733] to-[#ff5500]
               text-transparent bg-clip-text
               block
+              font-bold
             ">
               Copa UNSTA 2024
             </span>
@@ -50,10 +54,10 @@ const Home = () => {
           <div className="md:hidden order-2 flex justify-center items-center my-8">
             <div className="
               relative
-              w-[300px]
-              h-[300px]
-              sm:w-[400px]
-              sm:h-[400px]
+              w-[200px]
+              h-[200px]
+              sm:w-[300px]
+              sm:h-[300px]
             ">
               <Image
                 src="/assets/logo_torneo.webp"
@@ -76,6 +80,7 @@ const Home = () => {
             md:text-[20px]
             md:leading-[33px]
             order-3
+            text-center md:text-left
           ">
             El torneo de fútbol más emocionante de la facultad de Ingeniería ha regresado en su 3ª
             edición. A través de este sitio web podrán mantenerse al tanto de los partidos, equipos,
@@ -83,11 +88,11 @@ const Home = () => {
             fútbol universitario.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 order-4">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 order-4 justify-center md:justify-start w-full">
             <Link
               href="/masculino/"
               className="
-                bg-blue-500 hover:bg-blue-600
+                bg-blue-600 hover:bg-blue-700
                 text-white font-bold
                 py-4 px-8
                 rounded-full
@@ -97,6 +102,7 @@ const Home = () => {
                 text-center
                 text-lg
                 w-full sm:w-auto
+                flex-1 sm:flex-initial
               "
             >
               Masculino
@@ -104,7 +110,7 @@ const Home = () => {
             <Link
               href="/femenino/"
               className="
-                bg-pink-500 hover:bg-pink-600
+                bg-pink-600 hover:bg-pink-700
                 text-white font-bold
                 py-4 px-8
                 rounded-full
@@ -114,6 +120,7 @@ const Home = () => {
                 text-center
                 text-lg
                 w-full sm:w-auto
+                flex-1 sm:flex-initial
               "
             >
               Femenino
