@@ -45,6 +45,7 @@ export async function GET(request: Request) {
       limit
     })
   } catch (error) {
+    console.error('Error al obtener datos:', error)
     return NextResponse.json({ error: 'Error al obtener datos' }, { status: 500 })
   }
 }

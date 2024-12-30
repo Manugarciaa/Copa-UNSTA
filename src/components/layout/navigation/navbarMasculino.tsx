@@ -122,7 +122,6 @@ export default function Navbar() {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="sm:hidden overflow-hidden"
                         style={{
                             background: 'rgba(17, 24, 39, 0.95)',
                             backdropFilter: 'blur(8px)'

@@ -53,6 +53,7 @@ export async function GET(request: Request) {
       limit
     })
   } catch (error) {
+    console.error('Error al obtener jugadores:', error)
     return NextResponse.json({ error: 'Error al obtener jugadores' }, { status: 500 })
   }
 }

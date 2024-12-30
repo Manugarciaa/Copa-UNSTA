@@ -1,16 +1,15 @@
-import { NextResponse } from 'next/server'
-import { getSheetURL } from '../utils/constants'
+import { NextRequest, NextResponse } from 'next/server'
 
-export async function GET(request: Request) {
+export async function GET(
+  _request: NextRequest
+) {
   try {
-    const response = await fetch(getSheetURL('Copa de aluminio'))
-    const data = await response.json()
-    
-    return NextResponse.json({
-      datos: data,
-      total: data.length
-    })
-  } catch (error) {
-    return NextResponse.json({ error: 'Error al obtener copa de aluminio' }, { status: 500 })
+    return NextResponse.json({ message: 'Copa Aluminio endpoint' })
+  } catch (err) {
+    console.error('Error:', err)
+    return NextResponse.json(
+      { error: 'Error en Copa Aluminio' },
+      { status: 500 }
+    )
   }
 }

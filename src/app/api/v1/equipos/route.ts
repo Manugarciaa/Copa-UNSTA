@@ -1,12 +1,9 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { getSheetURL } from '../utils/constants'
 
-interface EquipoResponse {
-  ID: string
-  Equipo: string
-}
-
-export async function GET() {
+export async function GET(
+  _request: NextRequest
+) {
   try {
     const response = await fetch(getSheetURL('Datos'))
     if (!response.ok) {

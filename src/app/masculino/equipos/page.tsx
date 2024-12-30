@@ -13,11 +13,6 @@ import {
   type CarouselApi,
 } from '@/components/ui/carousel';
 
-interface ApiResponse {
-  Equipo: string;
-  ID: string;
-}
-
 function getImagePath(id: string): string {
   return `/images/${id}_logo.webp`; 
 }
@@ -60,14 +55,13 @@ const TeamsCarousel = () => {
         // Ordenar los equipos alfabéticamente por nombre
         equiposUnicos.sort((a, b) => a.Equipo.localeCompare(b.Equipo));
 
-        console.log('Equipos procesados:', equiposUnicos);
         setTeamData(equiposUnicos);
         if (equiposUnicos.length > 0) {
           setCurrentTeam(equiposUnicos[0].Equipo);
         }
         setError(null);
       } catch (error) {
-        console.error('Error:', error);
+        console.error('Error al cargar equipos:', error);
         setError('No se pudieron cargar los datos de los equipos');
       } finally {
         setLoading(false);
@@ -94,8 +88,6 @@ const TeamsCarousel = () => {
   }, [api, teamData]);
 
   const handleTeamClick = (teamId: string) => {
-    // Asegurarse de que la ruta sea correcta y que el componente de página exista
-    console.log('Navegando a:', `/masculino/equipos/${teamId}`);
     router.push(`/masculino/equipos/${teamId}`);
   };
 

@@ -1,7 +1,9 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { getSheetURL } from '../utils/constants'
 
-export async function GET(request: Request) {
+export async function GET(
+  _request: NextRequest
+) {
   try {
     const response = await fetch(getSheetURL('Estadísticas'))
     const data = await response.json()
@@ -10,7 +12,11 @@ export async function GET(request: Request) {
       estadisticas: data,
       total: data.length
     })
-  } catch (error) {
-    return NextResponse.json({ error: 'Error al obtener estadísticas' }, { status: 500 })
+  } catch (err) {
+    console.error('Error:', err)
+    return NextResponse.json(
+      { error: 'Error al obtener estadísticas' },
+      { status: 500 }
+    )
   }
 }
