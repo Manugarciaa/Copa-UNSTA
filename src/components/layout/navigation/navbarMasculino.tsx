@@ -16,8 +16,8 @@ type NavLink = {
 const navLinks: NavLink[] = [
     { id: "partidos", title: "Partidos", to: "/masculino/partidos" },
     { id: "equipos", title: "Equipos", to: "/masculino/equipos" },
-    { id: "fase_de_grupos", title: "Fase de grupos", to: "/masculino/fase_de_grupos" },
-    { id: "cuadro_de_eliminatorias", title: "Cuadro de eliminatorias", to: "/masculino/cuadro_de_eliminatorias" },
+    { id: "fase-de-grupos", title: "Fase de grupos", to: "/masculino/fase-de-grupos" },
+    { id: "cuadro-de-eliminatorias", title: "Cuadro de eliminatorias", to: "/masculino/cuadro-de-eliminatorias" },
     { id: "estadisticas", title: "Estadísticas", to: "/masculino/estadisticas" },
     { id: "femenino", title: "Femenino", to: "/femenino/partidos" },
 ]
