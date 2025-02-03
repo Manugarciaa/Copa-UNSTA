@@ -31,7 +31,7 @@ const getGrupoColor = (grupo: string): GrupoColors => {
 
   
   // Trim y uppercase para normalizar el input
-  const grupoNormalizado = grupo.trim().toUpperCase();
+  const grupoNormalizado = grupo.trim().toUpperCase().slice(-1);
 
   const colores: { [key: string]: GrupoColors } = {
     'A': { 
@@ -110,7 +110,7 @@ const FaseDeGrupos = () => {
               className={`${colors.bg} rounded-2xl p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-300 backdrop-blur-sm border border-gray-700`}
             >
               <h2 
-                className={`text-3xl font-bold mb-6 text-center tracking-wider bg-gradient-to-r ${colors.gradient} text-transparent bg-clip-text`}
+                className={`text-3xl font-bold mb-6 text-center tracking-wider ${colors.text}`}
               >
                 {grupoNombre}
               </h2>
@@ -119,6 +119,7 @@ const FaseDeGrupos = () => {
                   <thead>
                     <tr className="text-base border-b-2 border-gray-700">
                       <th className="py-3 px-3 text-left font-semibold w-[250px]">Equipo</th>
+                      <th className="py-3 px-2 text-center font-semibold w-[80px]">Pts</th>
                       <th className="py-3 px-2 text-center font-semibold w-[60px]">PJ</th>
                       <th className="hidden md:table-cell py-3 px-2 text-center font-semibold w-[60px]">PG</th>
                       <th className="hidden md:table-cell py-3 px-2 text-center font-semibold w-[60px]">PE</th>
@@ -126,7 +127,6 @@ const FaseDeGrupos = () => {
                       <th className="hidden md:table-cell py-3 px-2 text-center font-semibold w-[60px]">GF</th>
                       <th className="hidden md:table-cell py-3 px-2 text-center font-semibold w-[60px]">GC</th>
                       <th className="py-3 px-2 text-center font-semibold w-[60px]">DIF</th>
-                      <th className="py-3 px-2 text-center font-semibold w-[80px]">PTS</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -148,6 +148,7 @@ const FaseDeGrupos = () => {
                             <span className="font-bold text-lg">{equipo.Equipo}</span>
                           </div>
                         </td>
+                        <td className="py-3 px-2 text-center text-xl font-bold">{equipo.Pts}</td>
                         <td className="py-3 px-2 text-center text-lg">{equipo.PJ}</td>
                         <td className="hidden md:table-cell py-3 px-2 text-center text-lg">{equipo.PG}</td>
                         <td className="hidden md:table-cell py-3 px-2 text-center text-lg">{equipo.PE}</td>
@@ -155,7 +156,6 @@ const FaseDeGrupos = () => {
                         <td className="hidden md:table-cell py-3 px-2 text-center text-lg">{equipo.GF}</td>
                         <td className="hidden md:table-cell py-3 px-2 text-center text-lg">{equipo.GC}</td>
                         <td className="py-3 px-2 text-center text-lg">{equipo.Dif}</td>
-                        <td className="py-3 px-2 text-center text-xl font-bold">{equipo.Pts}</td>
                       </tr>
                     ))}
                   </tbody>

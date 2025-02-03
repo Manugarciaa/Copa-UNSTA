@@ -13,13 +13,14 @@ interface EquipoGrupo {
   GC: number
   Dif: number
   Grupo: string
+  DueloDirecto: number | null
 }
 
 export async function GET(_request: NextRequest) {
   try {
     const response = await fetch(getSheetURL('Fase de grupos'))
     const data = await response.json()
-    
+
     if (!data || !Array.isArray(data)) {
       throw new Error('Formato de datos inválido')
     }
@@ -43,21 +44,31 @@ export async function GET(_request: NextRequest) {
         GF: parseInt(item.GF) || 0,
         GC: parseInt(item.GC) || 0,
         Dif: parseInt(item.Dif) || 0,
-        Grupo: grupo
+        Grupo: grupo,
+        DueloDirecto: item['DueloDirecto'] ? parseInt(item['DueloDirecto']) : null
       })
 
       return acc
     }, {})
 
-    // Ordenar equipos dentro de cada grupo por puntos y diferencia de goles
+    // Ordenar equipos dentro de cada grupo
     Object.keys(grupos).forEach(grupo => {
       grupos[grupo].sort((a, b) => {
         if (b.Pts !== a.Pts) return b.Pts - a.Pts
+
+        // Si ambos equipos tienen un valor en "Duelo Directo", priorizarlo
+        if (a.DueloDirecto !== null && b.DueloDirecto !== null) {
+          return a.DueloDirecto - b.DueloDirecto
+        }
+
+        // Si no hay duelo directo, usar diferencia de gol
         if (b.Dif !== a.Dif) return b.Dif - a.Dif
+
+        // Si la diferencia de gol también es igual, ordenar por goles a favor
         return b.GF - a.GF
       })
     })
-    
+
     return NextResponse.json({
       grupos,
       total: Object.keys(grupos).length
