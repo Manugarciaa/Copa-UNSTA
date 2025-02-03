@@ -6,8 +6,11 @@ import Image from 'next/image';
 interface Match {
   local: string;
   visitante: string;
-  golesLocal: number;
-  golesVisitante: number;
+  golesLocal?: number;
+  golesVisitante?: number;
+  descripcion?: string;
+  fecha?: string;
+  hora?: string;
   grupo: string;
   jornada?: number;
   fase?: string;
@@ -73,28 +76,18 @@ const Partidos = () => {
               jornada = 1;
             } 
             // Los siguientes 2 partidos en Jornada 2
-            else if (currentCount < 6) {
-              jornada = 2;
-            }
-            // Resto son eliminatorias
             else {
-              jornada = 3;
-              fase = 'Eliminatorias';
-            }
+              jornada = 2;
+            }            
           } else if (match.grupo === 'C' || match.grupo === 'D') {
             // Primeros 2 partidos en Jornada 1
             if (currentCount < 2) {
               jornada = 1;
             }
             // Los siguientes 4 partidos en Jornada 2
-            else if (currentCount < 6) {
-              jornada = 2;
-            }
-            // Resto son eliminatorias
             else {
-              jornada = 3;
-              fase = 'Eliminatorias';
-            }
+              jornada = 2;
+            }            
           }
 
           return { ...match, jornada, fase };
@@ -126,7 +119,7 @@ const Partidos = () => {
           </span>
         </h1>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-4">
-          {[1, 2, 3].map((jornada) => (
+          {[1, 2].map((jornada) => (
             <button
               key={jornada}
               onClick={() => setSelectedJornada(jornada)}
@@ -155,8 +148,7 @@ const Partidos = () => {
                 className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700"
               >
                 <div className={`bg-gradient-to-r ${colors.from} ${colors.to} text-white text-sm py-2 px-4 flex items-center justify-between`}>
-                  <span>{match.fase} - {match.fase === 'Fase de grupos' ? `Grupo ${match.grupo}` : 'Final'}</span>
-                  <span className="text-xs bg-black/20 rounded-full px-3 py-1">Partido {index + 1}</span>
+                  <span>{match.descripcion}</span>
                 </div>
 
                 <div className="p-6">
@@ -176,10 +168,23 @@ const Partidos = () => {
                     </div>
 
                     <div className="flex flex-col items-center px-4">
-                      <div className={`text-3xl font-bold bg-gradient-to-br ${colors.gradient} text-transparent bg-clip-text`}>
-                        {match.golesLocal} - {match.golesVisitante}
-                      </div>
-                      <span className="text-gray-400 text-sm mt-1">Final</span>
+                      {match.golesLocal !== undefined && match.golesVisitante !== undefined ? (
+                        <>
+                          <div className={`text-3xl font-bold bg-gradient-to-br ${colors.gradient} text-transparent bg-clip-text`}>
+                            {match.golesLocal} - {match.golesVisitante}
+                          </div>
+                          <span className="text-gray-400 text-sm mt-1">Final</span>
+                        </>
+                      ) : (
+                        <>
+                          <div className="text-xl font-bold text-white">
+                            {match.fecha}
+                          </div>
+                          <div className="text-gray-400 text-sm mt-1">
+                            {match.hora}
+                          </div>
+                        </>
+                      )}
                     </div>
 
                     <div className="flex-1 text-right">

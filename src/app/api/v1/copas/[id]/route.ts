@@ -4,8 +4,11 @@ import { getSheetURL } from '../../utils/constants';
 interface PlayerStats {
   local: string;
   visitante: string;
-  golesLocal: number;
-  golesVisitante: number;
+  golesLocal?: string;
+  golesVisitante?: string;
+  fecha?: string;
+  hora?: string;
+  descripcion?: string;
 }
 
 interface GroupData {
@@ -18,10 +21,8 @@ export async function GET(
   context: { params: { id: string } }
 ) {
   try {
-    // Esperar explícitamente los parámetros antes de usarlos
     const { id } = await Promise.resolve(context.params);
 
-    // Validamos el ID después de obtenerlo correctamente
     if (!id || !['CO', 'CP', 'CB', 'CA'].includes(id)) {
       return NextResponse.json(
         { error: `Copa inválida: ${id}` },
@@ -30,21 +31,26 @@ export async function GET(
     }
 
     const sheetUrl = getSheetURL(id);
-    const response = await fetch(sheetUrl);
+    const cronogramaUrl = getSheetURL('Cronograma');
 
-    if (!response.ok) {
-      throw new Error(`Error al obtener datos de la copa ${id}`);
+    const [response, cronogramaResponse] = await Promise.all([
+      fetch(sheetUrl),
+      fetch(cronogramaUrl)
+    ]);
+
+    if (!response.ok || !cronogramaResponse.ok) {
+      throw new Error(`Error al obtener datos de la copa ${id} o del cronograma`);
     }
 
     const data = await response.json();
+    const cronogramaData = await cronogramaResponse.json();
 
-    if (!data || !Array.isArray(data)) {
+    if (!data || !Array.isArray(data) || !cronogramaData || !Array.isArray(cronogramaData)) {
       throw new Error('Formato de datos inválido');
     }
 
-    const groupData = transformGroupData(data, id);
+    const groupData = transformGroupData(data, cronogramaData, id);
     return NextResponse.json(groupData);
-
   } catch (error) {
     console.error('Error:', error);
     return NextResponse.json(
@@ -54,7 +60,7 @@ export async function GET(
   }
 }
 
-function transformGroupData(rawData: any[], group: string): GroupData {
+function transformGroupData(rawData: any[], cronogramaData: any[], group: string): GroupData {
   const matches: PlayerStats[] = [];
 
   rawData.forEach((row) => {
@@ -66,15 +72,22 @@ function transformGroupData(rawData: any[], group: string): GroupData {
 
       const local = row[localKey];
       const visitante = row[visitanteKey];
-      const golesLocal = parseInt(row[golesLocalKey] || "0", 10);
-      const golesVisitante = parseInt(row[golesVisitanteKey] || "0", 10);
+      const golesLocal = row[golesLocalKey] || undefined;
+      const golesVisitante = row[golesVisitanteKey] || undefined;
 
       if (local?.length === 3 && visitante?.length === 3) {
+        const cronogramaMatch = cronogramaData.find(
+          (match) => match.Equipo1 === local && match.Equipo2 === visitante
+        );
+
         matches.push({
           local,
           visitante,
           golesLocal,
           golesVisitante,
+          fecha: cronogramaMatch?.Fecha || 'Por definir',
+          hora: cronogramaMatch?.Hora || '',
+          descripcion: cronogramaMatch?.Descripcion || 'Eliminatorias',
         });
       }
     }
