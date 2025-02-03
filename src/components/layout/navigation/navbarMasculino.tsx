@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const MotionDiv = motion("div")
+const MotionDiv = motion.div
 
 type NavLink = {
     id: string
