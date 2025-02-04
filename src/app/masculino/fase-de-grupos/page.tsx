@@ -27,9 +27,12 @@ interface GrupoColors {
   bg: string;
 }
 
-const getGrupoColor = (grupo: string): GrupoColors => {
+// Función para obtener la ruta del logo
+function getImagePath(id: string): string {
+  return `/images/${id}_logo.webp`;
+}
 
-  
+const getGrupoColor = (grupo: string): GrupoColors => {
   // Trim y uppercase para normalizar el input
   const grupoNormalizado = grupo.trim().toUpperCase().slice(-1);
 
@@ -145,7 +148,7 @@ const FaseDeGrupos = () => {
                           <div className="flex items-center gap-3">
                             <div className="relative w-12 h-12">
                               <Image
-                                src={`/images/${equipo.ID.toLowerCase()}_icon.webp`}
+                                src={getImagePath(equipo.ID)}
                                 alt={equipo.Equipo}
                                 fill
                                 className="object-contain"

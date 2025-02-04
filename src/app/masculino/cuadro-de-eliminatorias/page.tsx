@@ -18,8 +18,8 @@ interface GroupData {
   matches: PlayerStats[];
 }
 
-function getTeamImagePath(teamCode: string): string {
-  return `/images/${teamCode.toLowerCase()}_icon.webp`;
+function getImagePath(id: string): string {
+  return `/images/${id}_logo.webp`;
 }
 
 const copas = [
@@ -107,9 +107,10 @@ const CuadroDeEliminatoria = () => {
                           <div className="flex items-center space-x-4">
                             <div className="relative w-16 h-16 transform transition-transform duration-300 hover:scale-110">
                               <Image
-                                src={getTeamImagePath(match.local)}
+                                src={getImagePath(match.local)}
                                 alt={match.local}
-                                fill
+                                width={40}
+                                height={40}
                                 className="object-contain drop-shadow-lg"
                               />
                             </div>
@@ -142,9 +143,10 @@ const CuadroDeEliminatoria = () => {
                             <span className="font-bold text-xl text-white">{match.visitante}</span>
                             <div className="relative w-16 h-16 transform transition-transform duration-300 hover:scale-110">
                               <Image
-                                src={getTeamImagePath(match.visitante)}
+                                src={getImagePath(match.visitante)}
                                 alt={match.visitante}
-                                fill
+                                width={40}
+                                height={40}
                                 className="object-contain drop-shadow-lg"
                               />
                             </div>

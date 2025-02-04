@@ -16,8 +16,9 @@ interface Match {
   fase?: string;
 }
 
-function getTeamImagePath(teamCode: string): string {
-  return `/images/${teamCode.toLowerCase()}_icon.webp`;
+// Función para obtener la ruta del logo
+function getImagePath(id: string): string {
+  return `/images/${id}_logo.webp`;
 }
 
 const getGroupColors = () => {
@@ -113,14 +114,13 @@ const Partidos = () => {
                   <div className="flex justify-between items-center space-x-4">
                     <div className="flex-1">
                       <div className="flex items-center space-x-4">
-                        <div className="relative w-16 h-16 transform transition-transform duration-300 hover:scale-110">
-                          <Image
-                            src={getTeamImagePath(match.local)}
-                            alt={match.local}
-                            fill
-                            className="object-contain drop-shadow-lg"
-                          />
-                        </div>
+                        <Image 
+                          src={getImagePath(match.local)} 
+                          alt={match.local} 
+                          width={40} 
+                          height={40} 
+                          className="rounded-full"
+                        />
                         <span className="font-bold text-xl text-white">{match.local}</span>
                       </div>
                     </div>
@@ -148,14 +148,13 @@ const Partidos = () => {
                     <div className="flex-1 text-right">
                       <div className="flex items-center justify-end space-x-4">
                         <span className="font-bold text-xl text-white">{match.visitante}</span>
-                        <div className="relative w-16 h-16 transform transition-transform duration-300 hover:scale-110">
-                          <Image
-                            src={getTeamImagePath(match.visitante)}
-                            alt={match.visitante}
-                            fill
-                            className="object-contain drop-shadow-lg"
-                          />
-                        </div>
+                        <Image 
+                          src={getImagePath(match.visitante)} 
+                          alt={match.visitante}
+                          width={40}
+                          height={40}
+                          className="rounded-full"
+                        />
                       </div>
                     </div>
                   </div>

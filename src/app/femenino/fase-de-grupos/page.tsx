@@ -27,6 +27,11 @@ interface GrupoColors {
   bg: string;
 }
 
+// Función para obtener la ruta del logo
+function getImagePath(id: string): string {
+  return `/images/${id}_logo.webp`;
+}
+
 const getGrupoColor = (): GrupoColors => {
   return {
     text: 'text-green-500',
@@ -113,14 +118,13 @@ const FaseDeGrupos = () => {
                       >
                         <td className="py-3 px-3 text-left">
                           <div className="flex items-center gap-3">
-                            <div className="relative w-12 h-12">
-                              <Image
-                                src={`/images/${equipo.ID.toLowerCase()}_icon.webp`}
-                                alt={equipo.Equipo}
-                                fill
-                                className="object-contain"
-                              />
-                            </div>
+                            <Image 
+                              src={getImagePath(equipo.ID)} 
+                              alt={equipo.Equipo} 
+                              width={40} 
+                              height={40} 
+                              className="rounded-full"
+                            />
                             <span className="font-bold text-lg">{equipo.Equipo}</span>
                           </div>
                         </td>
