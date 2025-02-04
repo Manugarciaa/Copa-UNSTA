@@ -105,7 +105,13 @@ const Partidos = () => {
     fetchAllMatches();
   }, []);
 
-  if (loading) return <div className="text-center">Cargando partidos...</div>;
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-[calc(100vh-100px)]">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-orange-500"></div>
+      </div>
+    );
+  }
   if (error) return <div className="text-center text-red-500">{error}</div>;
 
   const filteredMatches = matches.filter(match => match.jornada === selectedJornada);

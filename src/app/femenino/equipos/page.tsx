@@ -91,6 +91,14 @@ const TeamsCarousel = () => {
     router.push(`/femenino/equipos/${teamId}`);
   };
 
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-[calc(100vh-100px)]">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-orange-500"></div>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col items-center min-h-[calc(100vh-100px)] py-12">
       <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-16 text-center">
@@ -98,18 +106,10 @@ const TeamsCarousel = () => {
           Equipos Femeninos
         </span>
       </h1>
-
-      {loading && (
-        <div className="flex gap-2">
-          <div className="w-3 h-3 bg-white rounded-full animate-bounce"></div>
-          <div className="w-3 h-3 bg-white rounded-full animate-bounce [animation-delay:-.3s]"></div>
-          <div className="w-3 h-3 bg-white rounded-full animate-bounce [animation-delay:-.5s]"></div>
-        </div>
-      )}
       
       {error && <p className="text-red-500 text-xl">{error}</p>}
 
-      {!loading && !error && teamData.length > 0 && (
+      {!error && teamData.length > 0 && (
         <div className="w-full max-w-7xl mx-auto px-12">
           <div className="relative h-[500px]">
             <Carousel 

@@ -4,8 +4,8 @@ import { getSheetURL } from '../../utils/constants';
 interface PlayerStats {
   local: string;
   visitante: string;
-  golesLocal?: number;
-  golesVisitante?: number;
+  golesLocal?: string;
+  golesVisitante?: string;
   descripcion?: string;
   fecha?: string;
   hora?: string;
@@ -83,49 +83,47 @@ function transformGroupData(rawData: any[], cronogramaData: any[], group: string
 
     const local = firstRow[localKey];
     const visitante = firstRow[visitanteKey];
-    const golesLocal = parseInt(firstRow[golesLocalKey]) || undefined;
-    const golesVisitante = parseInt(firstRow[golesVisitanteKey]) || undefined;
+    const golesLocal = firstRow[golesLocalKey] || undefined;
+    const golesVisitante = firstRow[golesVisitanteKey] || undefined;
 
-    if (local && visitante) {
-      const cronogramaMatch = cronogramaData.find(
-        (match) => match.Equipo1 === local && match.Equipo2 === visitante
-      );
+    const cronogramaMatch = cronogramaData.find(
+      (match) => match.Equipo1 === local && match.Equipo2 === visitante
+    );
 
-      matches.push({
-        local,
-        visitante,
-        golesLocal,
-        golesVisitante,
-        descripcion: cronogramaMatch?.Descripcion || 'Fase de Grupos',
-        fecha: cronogramaMatch?.Fecha || 'Por definir',
-        hora: cronogramaMatch?.Hora || '',
+    matches.push({
+      local,
+      visitante,
+      golesLocal,
+      golesVisitante,
+      descripcion: cronogramaMatch?.Descripcion || 'Fase de Grupos',
+      fecha: golesLocal === undefined && golesVisitante === undefined ? cronogramaMatch?.Fecha || 'Por definir' : undefined,
+      hora: golesLocal === undefined && golesVisitante === undefined ? cronogramaMatch?.Hora || '' : undefined,
+    });
+
+    // Procesar estadísticas de equipos
+    if (golesLocal !== undefined && golesVisitante !== undefined) {
+      [local, visitante].forEach(team => {
+        if (!teamsMap.has(team)) {
+          teamsMap.set(team, {
+            team,
+            points: 0,
+            goalsFor: 0,
+            goalsAgainst: 0,
+            matches: 0
+          });
+        }
+        const teamStats = teamsMap.get(team);
+        teamStats.matches += 1;
+        if (team === local) {
+          teamStats.goalsFor += golesLocal;
+          teamStats.goalsAgainst += golesVisitante;
+          teamStats.points += golesLocal > golesVisitante ? 3 : golesLocal === golesVisitante ? 1 : 0;
+        } else {
+          teamStats.goalsFor += golesVisitante;
+          teamStats.goalsAgainst += golesLocal;
+          teamStats.points += golesVisitante > golesLocal ? 3 : golesVisitante === golesLocal ? 1 : 0;
+        }
       });
-
-      // Procesar estadísticas de equipos
-      if (golesLocal !== undefined && golesVisitante !== undefined) {
-        [local, visitante].forEach(team => {
-          if (!teamsMap.has(team)) {
-            teamsMap.set(team, {
-              team,
-              points: 0,
-              goalsFor: 0,
-              goalsAgainst: 0,
-              matches: 0
-            });
-          }
-          const teamStats = teamsMap.get(team);
-          teamStats.matches += 1;
-          if (team === local) {
-            teamStats.goalsFor += golesLocal;
-            teamStats.goalsAgainst += golesVisitante;
-            teamStats.points += golesLocal > golesVisitante ? 3 : golesLocal === golesVisitante ? 1 : 0;
-          } else {
-            teamStats.goalsFor += golesVisitante;
-            teamStats.goalsAgainst += golesLocal;
-            teamStats.points += golesVisitante > golesLocal ? 3 : golesVisitante === golesLocal ? 1 : 0;
-          }
-        });
-      }
     }
   }
 

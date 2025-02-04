@@ -31,7 +31,7 @@ export default function EquipoDetalle() {
   useEffect(() => {
     const fetchEquipoData = async () => {
       try {
-        const responseEquipo = await fetch('/api/v1/equipos');
+        const responseEquipo = await fetch('/api/v2/equipos');
         if (!responseEquipo.ok) {
           throw new Error('Error al obtener datos del equipo');
         }
@@ -42,7 +42,7 @@ export default function EquipoDetalle() {
           throw new Error('Equipo no encontrado');
         }
 
-        const responseDatos = await fetch(`/api/v1/jugadores?equipo=${encodeURIComponent(equipoInfo.Equipo)}`);
+        const responseDatos = await fetch(`/api/v2/jugadores?equipo=${encodeURIComponent(equipoInfo.Equipo)}`);
         if (!responseDatos.ok) {
           throw new Error('Error al obtener datos de jugadores');
         }

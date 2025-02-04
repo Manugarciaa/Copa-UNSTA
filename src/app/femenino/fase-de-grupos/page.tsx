@@ -58,7 +58,13 @@ const FaseDeGrupos = () => {
     fetchGrupos();
   }, []);
 
-  if (loading) return <div className="text-white text-center text-2xl">Cargando...</div>;
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-[calc(100vh-100px)]">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-orange-500"></div>
+      </div>
+    );
+  }
   if (error) return <div className="text-red-500 text-center text-2xl">{error}</div>;
 
   return (

@@ -4,8 +4,8 @@ import { getSheetURL } from '../../utils/constants';
 interface PlayerStats {
   local: string;
   visitante: string;
-  golesLocal?: number;
-  golesVisitante?: number;
+  golesLocal?: string;
+  golesVisitante?: string;
   descripcion?: string;
   fecha?: string;
   hora?: string;
@@ -84,8 +84,8 @@ function transformGroupData(rawData: any[], cronogramaData: any[], group: string
 
     const local = firstRow[localKey];
     const visitante = firstRow[visitanteKey];
-    const golesLocal = parseInt(firstRow[golesLocalKey]) || undefined;
-    const golesVisitante = parseInt(firstRow[golesVisitanteKey]) || undefined;
+    const golesLocal = firstRow[golesLocalKey] || undefined;
+    const golesVisitante = firstRow[golesVisitanteKey] || undefined;
 
     if (local && visitante) {
       const cronogramaMatch = cronogramaData.find(
