@@ -22,17 +22,17 @@ function getTeamImagePath(teamCode: string): string {
   return `/images/${teamCode.toLowerCase()}_icon.webp`;
 }
 
+const copas = [
+  { id: 'CO', nombre: 'Copa de Oro', color: 'from-yellow-400 to-yellow-600', gradient: 'from-yellow-400 to-yellow-600' },
+  { id: 'CP', nombre: 'Copa de Plata', color: 'from-gray-300 to-gray-500', gradient: 'from-gray-300 to-gray-500' },
+  { id: 'CB', nombre: 'Copa de Bronce', color: 'from-amber-600 to-amber-800', gradient: 'from-amber-600 to-amber-800' },
+  { id: 'CA', nombre: 'Copa de Aluminio', color: 'from-slate-400 to-slate-600', gradient: 'from-slate-400 to-slate-600' },
+];
+
 const CuadroDeEliminatoria = () => {
   const [copaData, setCopaData] = useState<{ [key: string]: GroupData }>({});
   const [loading, setLoading] = useState(true);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
-
-  const copas = [
-    { id: 'CO', nombre: 'Copa de Oro', color: 'from-yellow-400 to-yellow-600', gradient: 'from-yellow-400 to-yellow-600' },
-    { id: 'CP', nombre: 'Copa de Plata', color: 'from-gray-300 to-gray-500', gradient: 'from-gray-300 to-gray-500' },
-    { id: 'CB', nombre: 'Copa de Bronce', color: 'from-amber-600 to-amber-800', gradient: 'from-amber-600 to-amber-800' },
-    { id: 'CA', nombre: 'Copa de Aluminio', color: 'from-slate-400 to-slate-600', gradient: 'from-slate-400 to-slate-600' },
-  ];
 
   useEffect(() => {
     const fetchData = async () => {

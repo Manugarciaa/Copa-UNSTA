@@ -18,10 +18,10 @@ interface GroupData {
 
 export async function GET(
   request: Request,
-  context: { params: { id: string } }
-) {
+  { params }: { params: { id: string } }
+): Promise<NextResponse> {
   try {
-    const { id } = await Promise.resolve(context.params);
+    const { id } = params;
 
     if (!id || !['CO', 'CP', 'CB', 'CA'].includes(id)) {
       return NextResponse.json(

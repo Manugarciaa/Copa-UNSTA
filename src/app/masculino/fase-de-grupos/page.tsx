@@ -78,7 +78,7 @@ const FaseDeGrupos = () => {
         if (data.grupos) {
           setGrupos(data.grupos);
         }
-      } catch (err) {
+      } catch {
         setError('Error al cargar los datos');
       } finally {
         setLoading(false);

@@ -43,7 +43,7 @@ const Estadisticas = () => {
         if (data.topEquiposGoleadores) setTopEquiposGoleadores(data.topEquiposGoleadores)
         if (data.equiposMenosGoleados) setEquiposMenosGoleados(data.equiposMenosGoleados)
       } catch (err) {
-        setError('Error al cargar los datos')
+        setError(err instanceof Error ? err.message : 'Error al cargar los datos')
       } finally {
         setLoading(false)
       }

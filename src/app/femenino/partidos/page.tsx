@@ -20,7 +20,7 @@ function getTeamImagePath(teamCode: string): string {
   return `/images/${teamCode.toLowerCase()}_icon.webp`;
 }
 
-const getGroupColors = (group: string) => {
+const getGroupColors = () => {
   return { from: 'from-green-500', to: 'to-pink-600', gradient: 'from-pink-400 to-green-600' };
 };
 
@@ -99,7 +99,7 @@ const Partidos = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {filteredMatches.map((match, index) => {
-            const colors = getGroupColors(match.grupo);
+            const colors = getGroupColors();
             return (
               <div
                 key={index}

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import Image from 'next/image';
 
 interface PlayerStats {
@@ -27,10 +27,10 @@ const CuadroDeEliminatoria = () => {
   const [loading, setLoading] = useState(true);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
-  const copas = [
+  const copas = useMemo(() => [
     { id: 'CO', nombre: 'Copa de Oro', color: 'from-yellow-400 to-yellow-600', gradient: 'from-yellow-400 to-yellow-600' },
     { id: 'CB', nombre: 'Copa de Bronce', color: 'from-amber-600 to-amber-800', gradient: 'from-amber-600 to-amber-800' },
-  ];
+  ], []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -60,7 +60,7 @@ const CuadroDeEliminatoria = () => {
     };
 
     fetchData();
-  }, []);
+  }, [copas]);
 
   if (loading) {
     return (

@@ -58,7 +58,7 @@ const Partidos = () => {
         const groupMatchesCount = new Map();
         const matchesWithJornadas = allMatches.flat().map((match) => {
           let jornada;
-          let fase = 'Fase de grupos';
+          const fase = 'Fase de grupos';
           
           // Inicializar contadores para cada grupo si no existen
           if (!groupMatchesCount.has(match.grupo)) {
