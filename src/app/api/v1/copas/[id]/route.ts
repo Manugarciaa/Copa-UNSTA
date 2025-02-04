@@ -18,10 +18,10 @@ interface GroupData {
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } } // Define explícitamente el tipo
 ): Promise<NextResponse> {
   try {
-    const { id } = params;
+    const { id } = context.params; // Accede a `id` desde `context.params`
 
     if (!id || !['CO', 'CP', 'CB', 'CA'].includes(id)) {
       return NextResponse.json(
