@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://sheetdb.io/api/v1/kw3qfgzdqhyk3'
+export const BASE_URL = 'https://sheetdb.io/api/v1/y6j3rbdi554b4'
 
 export const getSheetURL = (sheet?: string) => {
   if (!sheet) return BASE_URL
